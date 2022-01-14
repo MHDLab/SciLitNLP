@@ -1,0 +1,1179 @@
+ON THE ARCING PHENOMENA IN THE MHD CHANNEL*
+V. Goldfarb, C. Pian, I. Sadovnik 
+Avco Research Laboratory, Inc. 
+Everett, MA 02149
+
+ABSTRACT
+
+Experimental and analytical studies have been 
+carried out to characterize and further understand 
+arcing phenomena with particular emphasis on erosion 
+produced by arcs populating high-voltage (open) 
+interelectrode gaps.
+
+This paper presents a set of related studies, 
+each address a specific aspect of the arcing 
+phenomena. First, bench top experiments were 
+conducted to examine arcing behavior in a magnetic 
+field as the arcs moved among bare and slagged 
+electrodes. Direct observation of arcing in an MHD 
+generator was then made on the Mark VII channel 
+sidewall, and these results were correlated with 
+measured voltage distributions.
+Arcing erosion was measured in both the bench 
+top and generator experiments for various electrode 
+configurations. Erosion of copper electrodes was 
+compared to erosion rates calculated from a thermal 
+ablation model for stationary and/or moving arcs.
+Finally, a discussion is presented on some 
+specific features of the arc behavior and on 
+consequences of cathodic arcing.
+INTRODUCTION
+The lifetime of an MHD channel is limited by 
+the gradual deterioration and/or catastrophic damage 
+due to arcing, primarily on the cathode wall.
+Cathode wall non-uniformities can lead to axial 
+breakdowns both over the high-voltage intercathode 
+gaps and across the sidewall insulator gaps. The 
+erosion induced by these arcs can be reduced or 
+tolerated in a number of ways:
+® Decrease the Hall field strength
+• Generate more uniform axial voltage 
+distributions
+• Lower the current density or increase arc 
+root mobility over electrode surfaces
+• Select materials able to withstand high 
+arc thermal fluxes and/or electrochemical 
+erosion
+• Use "sacrificial11 or renewable electrodes
+Some of these methods will degrade generator 
+performance or will necessitate impractical 
+designs. Others have not yet been tried.
+This paper, while not attempting to solve the 
+arcing problem, provides additional insight into the 
+multi-faceted arcing phenomena. Experimental 
+observations and measurements as well as analytical 
+studies will consider the following subjects:
+• Anode and cathode arcing features in 
+laboratory bench tests
+• Voltage distributions and arc 
+characteristics in an MHD generator
+
+• Electrode erosion by stationary and moving 
+arcs predicted by an analytical model
+BENCH ARCING EXPERIMENTS
+
+Bench-scale experiments were conducted to 
+simulate and observe the salient features of 
+interelectrode arcing even though some features, 
+such as adequate combustion gas flow over the 
+surface and a moving slag layer, proved difficult to 
+duplicate. These experiments first investigated arc 
+damage to interanode insulators, then studied arcing 
+behavior on the cathode wall both with and without 
+slag.
+Arcing and Damage to Interanode Insulators
+Interanode breakdown and subsequent arcing is 
+severely damaging because the J x 8 forces drive the 
+arcs into the wall and the supporting backwall. The 
+electrical properties of such arcs are described in 
+Refs. (1) and (2), while experimental observations 
+of interanode arcing in a generator were made in 
+Ref. (3). Refs. (4) and (5) confirm that interanode 
+insulator damage may be reduced by changing anode 
+geometry.
+This experimental study focused on character­
+izing interanode arcing in a magnetic field and 
+reducing the possibility of damage by arc quench­
+ing. The test rig shown in Figure 1 was used, where 
+the insulators consisted of BN or Si3N4 , 25 mm x 
+15 mm in cross-section and 1-10 mm thick, clamped 
+between water-cooled copper electrodes. The arc 
+current was provided by a 300 V, 40 A rectifier, and 
+a water-cooled Helmholtz pair provided magnetic 
+field strengths up to 1.45 T. After the arc was 
+initiated with a high frequency starter, inter­
+electrode arc currents and voltages were recorded 
+(Figure 2). The insulators were weighed upon 
+completion of the test to measure the mass of 
+evaporated material. For this series of tests, the 
+burn time was 4-8 sec, the arc voltage was 80-120 V, 
+and the mass loss was 40-400 mg. Data from a 
+typical test series is shown in Table 1. From these 
+experiments, the following observations were made:
+• Energy expenditure for BN arc "cutting" is 
+about 1 J/mg, independent of the magnetic 
+field strength. For a gap current above 
+some minimum value Icr, which is a 
+function of magnetic field strength, this 
+energy increases with current.
+• The cutting rate of BN is about 5 mm/sec 
+and decreases slightly as specific arc 
+power (power/gap thickness) increases.
+• As the insulator thickness increases the 
+specific power remains constant while the 
+specific energy for ablation decreases, 
+indicating that arc power is more 
+efficiently utilized.
+• Hot pressed silicon nitride plates were 
+more easily cut by arcing than the boron 
+nitride ones. Since both specific energy
+
+
+and specific power were lower for 
+SI3N4 , the thermal (arc) ablation 
+rate for these materials does not 
+correlate to erosion/corrosion resistance 
+or hardness, in which Si3N4 is 
+superior to BN.
+
+To prevent propagation of an arc that has been 
+driven into an insulator by the magnetic force, the 
+arc must be extinguished somewhere along its 
+trajectory. One possible technique may be adapted 
+from magnetic blast switch technology: quenching an
+arc by blowing it into a chamber where interelec­
+trode spacing abruptly increases.
+
+Experiments were performed using BN spacers, 
+with an 8 mm wide cavity formed by machining the 
+sides of two adjacent electrodes. Arcs were 
+observed to initiate normally, but then disappear 
+after reaching the edges of the cavity and cutting 
+through the top of the insulator (Figure 3). The 
+width itself of the cavity could not account for the 
+arc quenching since the open circuit voltage was 
+high enough to sustain the arc. Instead, it is 
+concluded that the sudden increase in width 
+extinguished the arc. It is then important to 
+determine whether repeated arcing would eventually 
+cut through the remaining insulation to strike the 
+back board. Such a break through did occur, but 
+only after repeated arc initiations (7-15) at the 
+same location with high voltages and currents.
+MkVII channel tests support the possibility of 
+limiting the depth of arc propagation: only about 1
+cm arc propagation was observed after 15 minutes 
+when subjected to an externally applied 10-20 A 
+interanode arc in a 2 T magnetic field.
+Slagged Intercathode Arcing
+The first series of intercathode bench top 
+experiments studied arc breakdown in the presence of 
+a molten slag layer. A seed/ash mixture was trans­
+ported by argon through a gas-cooled enclosure over 
+electrodes separated by a BN spacer. A magnetic 
+field of up to 1 T was directed parallel to the 
+length of the interelectrode gap.
+Figure 4 shows the time-resolved discharge 
+current and voltage for various modes of operation. 
+In the absence of a magnetic field, the 8-12 A arc 
+burns quietly inside the "cavity" formed in the 
+molten slag. The arc voltage is low due to metal 
+vapor in the cavity. Diffuse current transfer could 
+also occur in this mode, given the proper slag 
+thickness and temperature. At higher currents the 
+slag evaporates and the arc burns openly, surrounded 
+by a slag pool, at a low and stable voltage.
+The magnetic field was observed to exert a 
+moderate influence on the current through the slag. 
+At increasing field strengths, the voltage increased 
+as the current channel was deflected to the top of 
+the slag layer, elongating the current path. The 
+influence of the magnetic field on an open arc, 
+though, is quite strong. At higher magnetic fields 
+with the same current, the voltage increases several 
+times and periodic fluctuations of both current and 
+voltage appear. The frequency ranges of these 
+fluctuations fell around 1 and around 100 Hz.
+Molten slag frequently forms "bridges" which reduce 
+the voltage and also suppress the current fluctua­
+tions .
+
+The arc originates as a breakdown through the 
+slag-filled gap, then expands radially toward the 
+walls of the enclosure. Slag and a jet of plasma 
+erupt noisily from the opening in the enclosure.
+The erratic nature of the arcing prevented any 
+determination of current or magnetic field 
+dependence. However, the heat flux to the 
+electrodes increases greatly in the presence of a 
+magnetic field, with about 70 percent of the total 
+electrical energy transferred to the electrodes.
+The anode side of the intercathode arc receives a 
+larger fraction of the total heat.
+Anodic erosion rates are significantly higher 
+(Table 2) so that damage is concentrated on the 
+anode edge. Platinum and tungsten-copper caps 
+eroded somewhat less than the copper ones. The arc 
+remains stationary for tens of seconds before chang­
+ing positions. Therefore the electrode surfaces and 
+anode edges wear rather uniformly, and only averaged 
+and smoothened arc traces could be observed in post­
+test study. For example, traces on the platinum 
+surface are 200-400 mm wide and 10-20 mm deep.
+Unslagged Intercathode Arcing
+During the second series of experiments, arcs 
+were monitored between open unslagged electrodes in 
+the device pictured in Figure 5. Water-cooled 
+copper electrodes could be positioned at various 
+angles with respect to the imposed magnetic field, 
+and they were adjusted so that the Lorenz force drew 
+the arc away from the surface. The channel environ­
+ment was simulated by spreading a cesium seeded 
+flame from an oxy-acetylene burner over the elec­
+trodes. Electrical and heat flux measurements were 
+taken along with optical spectra of the discharge. 
+Arc development and movement were recorded with a 
+movie camera.
+In the first group of tests, the electrodes 
+were oriented parallel to the magnetic field.
+Figure 6 shows the development of individual arcs: 
+the arc first spreads radially from the edges of the 
+gap and forms a semicircle in a well-defined verti­
+cal plane. The arc roots slide over the elec­
+trodes. Next, several concentric current channels 
+may appear, each with its own electrode spots. In 
+the final phase these channels disappear sequen­
+tially, leaving a short-lived luminous cloud. This 
+behavior did not vary substantially over the test 
+ranges of 0.02-0.10 T and 10-30 A.
+The movie camera was too slow (500 frames/sec, 
+10-4 sec exposures) to capture all the details of 
+the process, but instantaneous features can be 
+observed from the frame sequences. Normally the 
+current goes to zero and the voltage goes to its 
+open circuit level when the new arc does not start 
+before the original one extinguishes. In some 
+cases, though, an arc will elongate to reach a high 
+voltage, allowing a new arc to form while the 
+original one still burns. These simultaneous arcs 
+lead to higher Im-jn and lower Vmax. The 
+lifetime of an individual arc is 5-10 msec, and the 
+velocity of the arc column and arc spots is about 5 
+m/sec. Particulates from the erosion process 
+sometimes emerge from the gaps at a velocity of 
+20-70 m/sec. The presence of hot combustion gases 
+only decreases the amplitude of current pulsations 
+due to an increase in Ira-jn and some increase in 
+final arc length. This relative insensitivity to 
+the combustion gases is to be expected because the
+
+8.14-2
+
+
+arc properties are defined by the metal vapor jets 
+that emerge from the arc spots. These jets have a 
+much higher conductivity than even seeded combustion 
+products.
+The erosion rate was comparable to the values 
+for slagged electrodes. Again, this is to be 
+expected since the erosion is primarily dependent on 
+current and heat transfer in the arc rather than on 
+the atmosphere and surface chemistry. The atmo­
+sphere and chemistry, though, could influence the 
+motion and residence time of the arc spots. As 
+before, the anode erosion was higher than that of 
+the cathode despite the symmetrical arc propagation.
+Gradual changes in electrode orientation alter 
+the arc behavior. Arc movement along, the gap pre­
+dominates, while regular radial expansion subsides. 
+Current and voltage pulsations become erratic and 
+have smaller amplitudes than before. Movie frames 
+shown in Figure 7 where the magnetic field is per­
+pendicular to the top of the electrode (simulating a 
+sidewall) reveal only one or two arcs existing 
+simultaneously. Starting near the middle of the 
+gap, the arc elongates irregularly and moves in the 
+direction of the Lorentz force. The arc roots may 
+move partly along the edges (especially of the 
+anode) and partly across the top surface at about 
+2-6 m/sec. The arc appears to be anchored by the 
+anode spot position, with the cathode spot moving 
+freely. It is unclear whether the arc spot motion 
+is continuous or jumping. After the arc channel 
+moves to its next position, luminous clouds produced 
+either by plasma afterflow or continuing diffuse 
+current remain visible for about 1 msec.*
+The gas flow around the arc gap was visualized 
+by adding sodium and strong turbulence was 
+observed. The arc generated turbulent convection 
+only moderately increases the heat flux to the 
+electrodes despite a significant increase in the arc 
+voltage. Most of the energy is dissipated to the 
+surrounding atmosphere where it is moved away from 
+the electrodes by "arc blow".
+Erosion rates with the arc moving along the 
+interelectrode gap are the lowest compared to an arc 
+burning in the absence of a magnetic field. To 
+supplement weight loss measurements, erosion rate 
+comparisons were made by measuring the intensities 
+of the copper emission lines. The Cul lines 
+radiated by the stationary arc are an order of 
+magnitude stronger than those radiated by moving 
+arcs at the same current. Higher anode erosion 
+rates could result from either higher heat fluxes or 
+lower mobility of the anode spots. Arc spot 
+mobility is a function of the surface conditions.
+In these experiments the surface of the copper 
+anodes was oxidized while the cathode surface 
+appeared to be cleaned by sputtering. The low 
+conductance oxide film on the anode can restrict 
+mobility and increase the residence time of the 
+anode spots by delaying the start of anode spot 
+motion after breakdown. Alternatively, the gas flow 
+field could blow the arc spot away from the cathode 
+edge to reduce the erosion rate there.
+
+* The role of the glow discharge/residual current in 
+the arc reignition was studied quite recently in 
+Ref. 10.
+
+Comparing the bench test results with the MHD 
+channel erosion data shows similar (0.5-1.0 ug/C) 
+erosion rates, supporting the conclusion that rapid 
+movement of the interelectrode arcs produces 
+comparatively little erosion of the cathode and 
+sidewall elements. The arcs are driven by Lorentz 
+forces. On the sidewall these forces result from 
+the main component of the magnetic field; at the 
+cathode a small (0.01-0.10 T) magnetic field exists 
+perpendicular to the wall, either as a component of 
+the main field lines if the wall is tilted by as 
+little as lu or as a spacial inhomogenity in the 
+magnetic field.
+MK VII SIDEWALL VOLTAGE DISTRIBUTION AND 
+ARCING OBSERVATIONS
+
+Sidewall Voltage Distribution
+Forty pegs on the left sidewall of the Mk VII 
+channel were instrumented with voltage transducers 
+to resolve the axial (Vx) and transverse voltage 
+distributions (Vy). It was observed that
+• Vy "overshoots" are larger at the 
+colder wall, especially for copper 
+anodes, with both slagged and unslagged 
+walls
+• Large non-uniformities in Vx on the 
+unslagged cathode wall "propagate" across 
+the sidewall in decreasing magnitude 
+until, at the mid-height of the channel, 
+the axial voltages are nearly uniform. 
+With a slag layer the same features are 
+observed but they exhibit larger 
+scatter. Close to the anode wall the 
+axial voltage distribution becomes even 
+more uniform.
+A two-dimensional voltage distribution 
+reconstructed from the axial traverses is shown in 
+Figure 8 . Vertical voltage differences (DVy) are 
+usually smaller than the corresponding axial voltage 
+differences (DVX). The largest voltage differ­
+ence, though, exists in the diagonal direction 
+perpendicular to equipotentials, and may be even 
+higher than the cathode voltage differences. These 
+voltage jumps produce the peg erosion seen on the 
+edges of the first two peg rows.
+Formation of voltage distributions may be 
+conveniently studied on both the cathode and anode 
+walls by reversing the direction of the magnetic 
+field. Voltage distribution near the "new" anode is 
+very non-uniform immediately after the field 
+reversal.
+Voltage distributions were also measured in 
+the central region of the bar sidewall. In these 
+experiments the interbar voltages could be increased 
+or lowered from their nominal values by connecting 
+the appropriate bars to anodes or cathodes.
+Correlating the erosion pattern and the 
+voltage non-uniformity at the sidewall could predict 
+erosion of differently designed sidewalls without 
+long-duration testing. Since the cathode non­
+uniformities only propagate a few rows along the 
+sidewall, the sidewall lifetime could be lengthened 
+by replacing these rows with non-conducting ceramic 
+elements.
+
+8.14-3
+
+
+Sidewall Arcing
+
+A special viewing port (Figure 9) was 
+installed in the right sidewall to permit 
+observation of arcing on the opposite wall. A 
+2-in.-diameter, 2-ft-long electrically insulated 
+tube passes through the magnet bore. The diameter 
+of the tube limits the field of view to 4-6 sidewall 
+bars or pegs. The tube is gas purged, and gas 
+pressure pulses remove the slag and dust that 
+collect in it.
+
+Interoeg Arcing and Sidewall Arc Radiation
+
+With no B-field, interpeg arcing induced by an 
+external power supply was observed for both clean 
+and slagged sidewalls. In seeded flow and unslagged 
+walls, a single 5-20 A arc burns rather steadily at 
+50-80 V. The arc is swept along by the flow (Figure 
+10a), elongating until it breaks off and starts 
+again at point A. With slag, the arc impedes the 
+flow so that the slag separates around it and leaves 
+a clean surface downstream (Figure 10b). About 60 
+percent of the arc thermal energy or 100 to 200 W 
+goes to the electrode, which is sufficient to 
+evaporate approximately 0.5 g/sec of molten slag.
+At a typical slag flow velocity of 2 cm/sec, this 
+rate of evaporation will clear a 2 mm x 5 mm strip.
+Optical spectra of sidewall arc radiation were 
+taken (Figure 11) which revealed that, in addition 
+to radiation from the hot gas flow, strong lines of 
+copper (Cul) and calcium (Cal and Call) are 
+present. The copper originates from peg erosion 
+while the calcium appears from the slag vapors. The 
+intensity ratios of the copper lines (Cu I 5105, Cu 
+I 5153, and Cu I 5218) were used to derive the arc 
+column temperature. Using known transition proba­
+bilities, the temperature was calculated as T = 6030 
+± 200 K. This temperature was comparable to that of 
+an air-burning arc. In addition, comparison of the 
+radiation from an arc sustained by an external 
+source and from a high cathode open gap arc in a 
+magnetic field could be used to evaluate the Hall 
+arc current, which is normally difficult to measure 
+directly.
+Interbar Arcing
+Interbar voltages were measured and the arcing 
+pattern was simultaneously photographed with a 
+200-mm lens for the bars seen through the optical 
+window (31M, 31B, 32M, and 32B). Optical spectra 
+were also taken with a fiberoptics-connected 
+spectrometer. No arcing was observed under normal 
+operation when DV, measured between 31H and 32B, was 
+lower than 50 V. When 0V was increased above 50 to 
+65 V by applying an external dc voltage or by 
+connecting bars to cathodes, arcing took place if 
+the seeded gas conductivity exceeded 3 mho/m. Three 
+to six arcs with currents of 2-3 A each usually 
+occurred on unslagged bars. Sometimes these arcs 
+suddenly merged into one large arc with a power 
+supply limited current of 10-20 A. When DV crossed 
+the threshold voltage in slagged flow, a more stable 
+5-10 A arc formed. In some cases, though, a current 
+up to 10 A could flow without forming an observable 
+arc. It is possible that an arc was indeed present 
+but was running within the slag layer.
+Motion pictures taken under the conditions 
+indicated in Figures 17 and 18 prompted the 
+following observations and measurements:
+
+• Under normal operation, the maximum 
+''diagonal" voltage (30 V < AV<j < 50 V) 
+is a factor of 1.2 to 1.5 times DVX but 
+is not high enough for arc formation. 
+Increasing DV^ to 60-70 V with an 
+external power supply, or by connecting 
+to certain electrodes can induce arcing, 
+presumably by increasing the total or 
+local Hall voltage.
+• Above the voltage threshold, strong arc 
+"pulses" form every 0.05-0.25 second on 
+unslagged surfaces, lasting for 0 .1-0.2 
+second. The current in these interbar 
+arcs start as 0.5-2 A in the discharge 
+and then increases to over 10 A for the 
+strong arc in 0.05-0.01 second.
+• Several small arc spots or 1 to 2 large 
+spots exist permanently and move slowly 
+(a few cm/sec) over the liquid slag 
+surface. The spot polarity is difficult 
+to identify, as is the position of the 
+"opposite" arc root. It is not clear if 
+these arcs originate from the neighboring 
+wall element or if they run between the 
+slag surface and the core plasma, where 
+diffuse current transfer takes place. It 
+is impossible to distinguish the 
+"Faraday" and "Hall" arcs.
+• More distinct arcs were observed when the 
+magnetic field was reversed. These arcs 
+are localized and move rapidly between 
+the bars along the same diagonal where 
+the highest voltage occurs.
+• Bar edge erosion was evident in post-test 
+inspection. It is believed that only 
+arcs with roots directly attached to the 
+metal, especially short 
+"surface-to-surface" interelement arcs, 
+cause significant damage while arcs 
+rooted on the slag surface do not cause 
+erosion.
+ANALYTICAL ESTIMATE OF ARCING EROSION
+In this section we calculate the erosion of 
+electrode material due to the heat load imposed at 
+the foot of either a moving or stationary arc. The 
+heat load can be calculated from the electrical 
+power dissipated at the arc root. This power is 
+equal to the near electrode arc voltage drop times 
+the arc current. For the case of the intercathode 
+high gap arc, the voltage drop is related to the 
+local gap properties. Local gap properties are 
+associated with the physical state of the gap and 
+include insulator width, slag thickness, slag 
+chemistry, and wall temperature, among others. On 
+the other hand, the currents flowing across the 
+intercathode high gap arcs are strong functions of 
+the overall generator operating parameters, such as 
+channel loading, average plasma conductivity, and 
+magnetic field strength. The voltage is believed 
+not to scale with generator size, while the 
+intercathode gap current will increase with 
+generator size.
+The anodic and cathodic drops of the 
+intercathode high gap are assumed in the present 
+analysis to be approximately 1/3 of the total high 
+gap voltage (the other 1/3 consumed in the arc
+
+8.14r4
+
+
+column). So that for a 75V gap each drop amounts to 
+25V. We have also estimated the cathode wall axial 
+current leakage to be about 20A for the AVCO MkVI 
+generator. So we can use 500W as a typical number 
+for the heat load of these intercathode high gap arc 
+roots. The arc is assumed to be described by a 
+2-dimensional gaussian distribution of heat flux q 
+(W/m2) with a total arc heat load 0 (W) using the 
+following equations:
+
+where qmax is the maximum heat flux at the arc 
+center and Rarc = k^ ^ 2 is the characteristic 
+arc radius. Assuming that the heat load of this arc 
+is imposed on a semi-infinite electrode, approxi­
+mating that the depth of the electrode in the Z 
+direction is much larger than Rarc, the time 
+dependent temperature distribution may be 
+found.n>12 If the arc is moving over the 
+electrode surface at velocity V, the temperature at 
+the center of the moving arc (r=0 ) as a function of 
+time and depth coordinate (Zm) in the moving frame 
+of reference can be expressed as:
+
+- » V ' )
+2Q p e 4at' 4T akc ) L
+(4ir)3/2k /T * ° v/t7
+(“ c * *') (3)
+
+denoting the thermal conductivity and diffusivity of 
+the electrode material as k and a, respectively.
+The erosion rate of a moving arc G (kg/sec) can then 
+be stated as the simple relation:
+
+G =
+
+pelec V
+
+Z
+
+evap
+7^
+
+(4)
+
+where pelec ts the electrode material density and 
+Zevap the depth in the electrode at which the 
+temperature reaches the evaporation temperature of 
+the electrode material. This erosion rate equation 
+can be substituted into the temperature equation at 
+T=TeVap- However, for quasi-steady operation 
+(t->«) it is also necessary to subtract the power 
+required to melt (AHmeit) and vaporize (AHevap) 
+electrode material due to the arc heat load Q. 
+Therefore the following integral equation is derived 
+which can be used to find the erosion rate G as a 
+function of the electrode properties, arc velocity, 
+arc radius, and arc heat load:
+
+Note that the unknown G appears both inside 
+and outside the integral. This solution, though, 
+breaks down at small velocities where the erosion 
+rate, defined in Eq. 4, approaches zero. Since 
+actual erosion rates for stationary arcs are much 
+larger than those for large arcs, an alternate 
+solution must be obtained for the motionless arc. 
+Therefore the stationary arc erosion rate is defined 
+as:
+p el, ec dZ evap
+Gs = n ^ ~ ~ ^ t (6
+
+The erosion rate now depends on the time 
+derivative of the evaporation depth Zevap 
+evaluated at time tevap, which is the time needed 
+for the electrode surface under the stationary arc 
+to reach the evaporation point. Inserting this new 
+equation into the previous temperature equation with 
+V=0, results in the following integro-differential 
+equation for the stationary arc:
+
+The evaporation time is simple to obtain in 
+closed form by setting Zevap=dZevap/dt=0 and 
+integrating the previous equation. Both equations 
+were also solved numerically over a range of arc 
+radii for a copper electrode and an arc heat load of 
+500 W. A "blended" solution for G(V,Rarc) has 
+been constructed using the stationary erosion rate 
+at small velocities and the moving arc solution for 
+medium to large arc velocities. The results are 
+shown in Figure 14 for an arc radius of 0.2 mm.
+From the solution it was found that there exists for 
+every arc radius a critical arc velocity, denoted as 
+V*. above which no erosion occurs. For the 0.2 mm 
+arc investigated, this critical velocity is 0.8 
+m/sec.
+
+A characteristic erosion rate has been defined 
+as the erosion rate for an arc velocity that is half 
+of the critical velocity; that is, G*=G(V*/2). For 
+the test case shown in Figure 14, G*=2.5 mg/sec.
+The functional dependence of G(V) can be investi­
+gated for all Rarc once the arc velocity is 
+nondimensionalized by V* and the erosion rate is 
+nondimensionalized by G*. The curves of V*(Rarc) 
+and G*(Rarc) in Figure 15 show that both critical 
+velocity and characteristic erosion decrease with
+
+8.14-5
+
+
+arc radius. In addition, a critical arc radius, 
+Rarc*, exists beyond which no erosion occurs, even 
+for a stationary arc. This critical radius is 
+calculated as .25 mm for 500 W arcs on copper 
+electrodes.
+
+A simplified set of equations are presented to 
+simulate the erosion rate for 500 W copper arcs as a 
+function of the radius:
+
+where G* is in mg/sec and V* is in m/sec. A 
+3-dimensional plot of G as a function of arc 
+velocity and arc radius to critical radius ratio, 
+constructed from the simplified equations, is shown 
+in Figure 16. A similar 3-D description of arcing 
+erosion might be developed by consolidating the 
+effect of electrode material and arc heat load into 
+the critical arc radius.
+
+Figure 16 shows the region for the arc radius 
+very cose to the critical radius. This was done 
+since typical characteristic erosion rates for 20A 
+arcs from the model's results are around 500 
+ug/coulomb (at Rar-c/Rarc ~0 .5). Measured 
+levels for arcing erosion in bench experiments yield 
+much smaller numbers ~ 2 *jg/coul. This rate can be 
+attained by either of 2 situations: a) motionless
+arcs with radius very close to the critical radius, 
+which is the case described in Fig. 21, b) arcs of 
+arbitrary radius (smaller than Rarc) which move 
+at velocities very close to the arc critical 
+velocity. Of course the second criterion can be 
+explained by arcs which are most of the time mobile 
+with arbitrarily large velocities (larger than 
+V*), but for a small fraction of their time are 
+stationary, and erode the electrode at this small 
+time fraction. In this case it would mean that 
+typically arcs are stationary less than 1 percent of 
+the time.
+DISCUSSION OF CATHODIC ARCING FEATURES
+Although arcing takes place on both the 
+cathode and anode walls, erosion of the anode wall 
+is less severe since the lower interelectrode 
+voltage “spikes" infrequently produce arcing. Even 
+if arcing does occur, proper design of the inter­
+electrode space can limit the damage. Therefore it 
+is more crucial to develop a broad understanding of 
+"cathodic" arcing, including near-cathode sidewall 
+elements where the voltage distribution and arcing 
+breakdown conditions are similar to those of the 
+cathode. This similarity arises from both the 
+sidewal1/cathode electrical link and the formation 
+of a potassium sub-layer over the sidewall following 
+this link. Although propagation of the sidewall arc 
+in the boundary layer and the velocity of the arc 
+root may be different from those at the cathode, 
+sidewall erosion is probably not qualitatively 
+different from cathode erosion. The ability of the 
+“finer" sidewall segmentation to split leakage 
+current into multiple smaller arcs may be offset by 
+these smaller elements being more susceptible to 
+damage.
+
+Figure 17 illustrates the formation of charac­
+teristic "cathode” voltage patterns and arcing for a 
+10 electrode wall segment. The voltage over the 
+segment depends on the overall channel conditions, 
+so it was necessary to assume some typical volt­
+ages: 80 V arcing breakdown voltage, 70 V
+steady-state arc voltage, and 1 V voltage drop 
+across a shorted gap. The latter voltage was 
+selected for illustrative purposes since the actual 
+voltage drop is quite small. The voltage distri­
+bution and arcing sequence is thus:
+1. Initially the slag layer has uniform 
+resistance so that the gap voltages are all 
+equal.
+2. The voltage is redistributed by the random 
+formation of the potassium-rich slag layer, 
+which changes selective gap resistances.
+3. As this redistribution continues, most gap 
+resistances decrease with the available 
+voltage “concentrating" over the few 
+"unshorted" gaps.
+4. As gap if 2 gradually shorts, the voltage at 
+gap i f ! reaches breakdown level.
+5. An arc forms at gap if7 and runs along the
+gap length, carrying 70 V and a current which, 
+is a function of the overall channel condi­
+tions. The arc removes the potassium sub­
+layer (one traverse of a 100 to 500 W arc is 
+sufficient), but liquid slag continues to flow 
+over the gap, except near the arc where arc 
+jetting blows the slag away. The liquid slag 
+across the gap has a relatively high resist­
+ance and therefore does not short the gap.
+6 . The arc extinguishes but the gap still remains 
+highly resistive. It is unclear whether the 
+gap voltage then remains the same or decreases.
+7. Gap if2 and gap i f l are now both highly 
+resistant but "arc-less" and the first one to 
+reach breakdown voltage, in this case gap
+#2, arcs. Thus the voltage in gap i f l 
+drops.
+8 . Gap 1f2 arcs for a period of time.
+9. The arc across gap if2 disappears so that gap 
+#2 competes with the gap with the “next 
+highest resistance", in this case gap #9.
+10. Gap #2 wins again. After a new breakdown, 
+the arc on gap #2 re-establishes.
+Some features of this process merit further 
+comments:
+S i n g l e vs. M u l t i p l e A r c s
+The arc mode depends on the shape of the V-I 
+characteristics. In most cases the "minimum 
+voltage" principle is valid for arc discharges and 
+implies that the merger of small arcs should take 
+place when operating on the falling branch of the 
+V-I characteristic and not on the rising branch.
+The branch on which the arc operates is dependent on 
+the operating conditions as follows:
+
+8.14-6
+
+
+Falling Branch
+
+Free-burning arc 
+High concentration of 
+metal vapors in arc 
+channel
+Strong conductivity 
+rise with temperature
+
+Rising Branch
+
+Arc channel 
+diameter limited 
+by walls 
+Cold gas flow 
+Small inter­
+electrode distance 
+Weak conductivity 
+rise with 
+temperature
+Consequently, arcs with high current (over a 
+few A) that evaporate electrode material, slag, 
+and/or seed deposits belong to the first category 
+and tend to run "solo". In contrast, low current 
+"non-evaporating" arcs whose small diameter is 
+controlled by the "cold"gas flow in the boundary 
+layer belong to the second category and may exist as 
+a several-member "family". These arcs include those 
+between the core plasma flow and the electrode 
+surfaces.
+
+Several strong arcs may coexist, but they must 
+have separate power supplies to keep their roots 
+electrically isolated in order to maintain them 
+simultaneously.
+A r c M o v e m e n t
+Arc movement over an electrode surface is a 
+function of the magnetic field (strength and 
+direction), the electrode material properties which 
+control the surface temperature, and the presence of 
+an insulating oxide layer, a conductive seed/- 
+potassium layer, and the slag. To a lesser extent, 
+the arc movement is also dependent on the tempera­
+ture and electrical conductivity of the gas boundary 
+layer. Arc velocity over very clean copper elec­
+trodes has been defined in Ref. 9 as V = 5 
+(I/d)0.4.
+
+High current "evaporating" arcs tend to stay a 
+site which is hot or is covered with a conductive 
+layer or to move along the gap "in search of" 
+potassium deposits. These arcs tend to evaporate as 
+much low-ionization potential material as possible 
+into their current channels to lower their resis­
+tances. Low current arcs do not incorporate 
+electrode material and are therefore less surface 
+dependent and more mobile. Since electromagnetic 
+force is current dependent, the correlation of 
+actual arc velocity versus current may be much more 
+complicated.
+A r c i n g E r o s i o n
+Bench tests indicate that the erosion rate for 
+a typical 20 A moving arc is on the order of 2 
+yd'/C, which on the average is 0.05 mg/sec.
+Assuming that the removal of 10 g copper can be 
+tolerated, the electrode would have a lifetime on 
+the order of 100 hr at this erosion rate. This 
+prediction is somewhat pessimistic compared to 
+better results obtained in long duration channel 
+tests. Actual arcing erosion may also be reduced by 
+several factors:
+• The open gap moves along the channel
+• The effective duration of the arc is 
+reduced by spending part of the time 
+transferring current in the diffuse mode.
+
+• Some of the calculated leakage current 
+actually flows without damage into the 
+liquid slag and the boundary layer rather 
+than across the electrode gap. A diagram 
+of such behavior, showing the current 
+density in the arcing cross-section of an 
+open gap and in a shorted gap, is shown 
+in Figure 18.
+
+A r c E x t i n g u i s h i n g
+Bench experiments indicate that an arc is 
+blown into cold surrounding gas, where it 
+disappears, if the available voltage cannot support 
+a certain arc length. Same should be true for the 
+"cathodic" MHD channel arc (except the arc column 
+diffuses reaching the core flow). It can be 
+speculated that high current arcs controlled by 
+evaporating electrode material in a narrow gap may 
+behave differently. These very short arc columns 
+will not be "blown" away by the magnetic field 
+because maintaining the arc column within a con­
+ductive pocket of copper vapor is energetically 
+advantageous. The standing long-living high-current 
+arc, when formed, should be a major erosion factor.
+
+" A r c L e s s " O p e n G a p s
+While arcing is the predominant mechanism for 
+opening a gap, some initial part of this process is 
+achieved with a diffuse current. Since approxi­
+mately 1 J/cm is required to remove 0.2 mm of a 
+conductive slag sub-layer from a gap, the entire gap 
+would be cleaned by a diffuse current in about 100 
+msec. The cleaning process is accelerated after the 
+arc is formed due to the instability/contraction of 
+the slag current. Even after the arc is extin­
+guished by magnetic field "blowing" and/or by the 
+voltage drop associated with a potassium deposit, 
+the gap may maintain its relatively high voltage and 
+again conduct high current in the diffuse mode for 
+some time. The characteristic time for a gap to 
+open is usually about 1 minute, while the time 
+required to form a potassium deposit sufficient to 
+extinguish the arc is only a few seconds. Thus an 
+interplay between the potassium deposit and diffuse 
+current arcing processes takes place in an open 
+gap. Direct observations of arcing and time- 
+resolved voltage measurements are needed to 
+proportionate arc current versus diffuse current 
+transfer modes.*
+
+*This work was sponsored by the U.S. Department of 
+Energy under Contract Ho. DE-AC22-87PC90274, Sub­
+contract No. CX5136D58S and Contract No. 
+DE-AC22-84PC70507.
+
+8.14-7
+
+
++
+
+Fig. 1 Sketch of the Interelectrode Arcing Test Rig
+
+TABLE 2 EROSION OF METAL ELECTRODES BY ARC DISCHARGE 
+IN MAGNETIC FIELD
+
+Experimental Conditions
+
+Erosion Rate, yg/Coulomb 
+Anode Cathode
+
+B parallel to gap length
+0.02 < B < 0.1T 
+1 = 20A
+
+Cu 2 Cu - 0.5
+
+B perpendicular to gap length 
+0.01 < B < 0.02T Cu 0.8 Cu - 0.3
+I - 20-30A W/Cu 0.5
+8 = 0 
+I = 25A Cu 5 Cu 2
+
+.| l ll l l l l l l |l
+
+Fig. 3 Arcing Cuts of the Interelectrode BN 
+Insulator (Photo 5431-1)
+a) 1.7 mm Thickness, without Cavity
+b) 1.7 mm Thickness, with Cavity
+c) 4.1 mm Thickness, without Cavity
+d) 4.1 mm Thickness, with Cavity
+
+Fig. 2 Current and Voltage Records of
+Interelectrode Arcing, V0 - 250 V, B ^ 
+1.35; 1.7 mm, BN Insulator
+a) Electrodes without Cavity
+b) Electrodes with Cavity, Alternate Arc 
+Ignition
+
+TABLE 1 CHARACTERISTICS OF ARCING BREAKDOWN OF
+INTERELECTRODE INSULATORS IN A MAGNETIC FIELD
+
+INSULATOR 
+THICKNESS 
+(GAP) m
+
+MAGNETIC
+FIELD
+STRENGTH
+T
+
+CURRENT
+A
+
+POWER
+kW
+
+ENERGY
+kJ
+
+POWER/
+GAP
+W/nrni
+
+ENERGY 
+MASS LOSS 
+J/mg
+
+0.95 BN 1.3 21 1.7 6 1800 165
+1.75 1.3 23 1,85 11 1050 122
+1.75 1.3 35 2,8 15 1600 162
+1.70 1.45 23 1,9 10 1100 115
+1.70 0.8 23 1,7 9 1000 90
+4.1 1.3 36 4,2 19 1020 100
+4.8 1.3 36 4,3 32 900 94
+4.0 S13N4 1.3 23 2.4 10 600 52
+6.5 1.3 36 4,8 18 740 55
+10.8 1.3 36 4,0 22 370 46
+
+0- oi___lJ__I___I___ ... I___I__ 1 . .
+O f l 2 3 4 5 6 7
+TIME . MIN
+BREAKDOWN
+
+Fig. 4 Arcing Modes in the Presence of Slag
+1 Arc Burns Inside the Slag Cavity
+2 Open Arc "Detached" by Magnetic Field
+3 Current Through a Slag "Bridge"
+4 Arc "Detached" by Magnetic Field
+
+8.14-8
+
+
+LIGHT GUIDE TO SPECTROMETER
+
+BREAKDOWN
+DEVELOPMENT
+
+REMOVABLE BN 
+SLAG RETAINER
+
+Fig. 5 Sketch of the InterelecErode Arcing Test 
+Set-up II, Unsiagged Conditions
+
+t o
+Fig. 6 Typical Sequence of Events for
+Interelectrode Arcing in a Magnetic field 
+Parallel to the Gap. I - 20A, B - 0.05T, 
+500 frames/sec, 10~4 Sec exposure
+
+- 90v — 40v + 5 v + 5 0 v
+
+Fig. 8 Typical Voltage Distribution Map Over the 
+Mk VII Sidewall (Near Cathode)
+
+QUARTZ
+
+Fig. 9 Design of the Sidewall Optical Port
+
+A SLAG
+
+>==0
+
+L9796
+
+Fig. 7 Sequence of Events for Interelectrode
+Arcing in a Magnetic Field Perpendicular to 
+the Electrode Surface. I - 30A, BN - 
+0.021, 500 frames/sec, 10“^ sec exposure
+
+A) B)
+Fig. 10 Patterns of Sidewall Arc Movement lai and 
+Slag Melting (b)
+
+8.14-9
+
+
+Cal Cul Fol Na
+4226 5105 5242
+5153 5250
+5218
+
+Fig. 11 Spectra of Plasma in Mk VIT Extension 
+Section
+a) Without Ash Injection
+b) With Ash Injection and Slag Layer Tormed
+c) With Sidewall Arcing
+
+BURNER TIME (MINS)
+
+Fig. 12 Real Time Plot of the Interbar (31M-32B) 
+Voltage. 1,2,4,6 - arcing; 3,4 - no 
+arcing 5 - strong arcing
+
+© © <D
+
+TYPICAL BAR SIDEWALL VOLTAGE DISTRIBUTIONS
+
+Fig. 13 Voltage Distribution Pattern Corresponding 
+to Selected Burner Times from Fig. 17
+
+Fig. 14 ARC Erosion vs. Arc Velocity
+Rare = 0.2 mm, Qarc - 500 W, Cu Electrode
+
+Fig. 15 Arc Critical Velocity and Characteristic 
+Erosion vs. Radius (Qarc = 500 W, Cu 
+electrode)
+
+Fig. 16 Arc Erosion vs. Radius and Velocity
+Qarc = 500 W, Cu Electrode, Rare* - 0.25 mm
+
+8.14-10
+
+
+T ime, au References
+10 10 10 10 10 10 10 10 10 10
+
+10 20 5 5 5 5 20 5 15 10
+
+5 30 1 1 1 1 SO 1 5 5
+
+l 12 1 1 1 i 80 L 1 i
+1 22 I 1 1 1 rArc
+
+\ 1 1
+70
+
+____ A_ 42 O - J 1 50 1 1 1
+
+1 82 1 1 1 1 10 1 1 1
+
+____ i _
+
+Arc
+r \ 1 i '•° i '2 1
+/o
+l 42 1 i 1 1 30 1
+i rArc
+
+\ 1 2g_ 1 1 1 i 1
+
+—•--- [
+
+Fig. 17 Example of Hypothetical Voltage
+Redistribution Sequence Over 10 gap 
+Cathode Wall Segment
+
+Fig. 18 Hypothetical Current Density Distributions 
+Intercathode Gaps
+
+1. Pian, C.C.P., Petty, S.W., and McClaine, 
+A.W., "Experimental Investigation of 
+Factors Affecting the Cathode Wall Slag 
+Layer Resegmentation Frequency," 
+Proceedings of the 26th Symposium on the 
+Engineering Aspects of MHD, Nashville,
+TN, June 20-22, 1988.
+
+2. Pian, C.C.P., Sadovnik, I., Petty, S.W., 
+and McClaine, A.W., "Voltage-Current 
+Charcteristics of the Insulator Gaps in a 
+Slagging MHD Generator," Proceedings of 
+the 26th Symposium on the Engineering 
+Aspects of MHD, Nashville, TN, June 
+20-22, 1988.
+3. Cott, D.W., “Slag Behavior in MHD 
+Generators: Physical Phenomena and 
+Engineering Consequences," Proceedings of 
+the 26th Symposium on the Engineering 
+Aspects of MHD, Nashville, TN, June 
+20-22, 1988.
+
+4. Avco Research Laboratory, Inc., “MHD 
+Channel Development," Quarterly Progress 
+Report, Contract No. DE-AC22-84PC70607, 
+July 1986.
+
+5. Podmoshenky, I.V., et al., “High 
+Temperatures, 6 , 1130, 1968.
+
+6 . Unkel, W. and Blackman, L., Journal of 
+Energy, 7, 272, 1983.
+
+7. Hruby, V.J. and Weiss, P., "Experimental 
+Investigations of the Fault Power in a 
+Segmented MHD Generator," 19th Symposium 
+on Engineering Aspects of MHD, Tullahoma, 
+June 1981.
+
+8 . Bashilov, V.A., Makarov, Y.V. and 
+Sorokin, V.Y., "Study of Arc-Quenchers 
+for MHD Generator Anode Wall," 19th 
+Symposium on Engineering Aspects of MHD, 
+Tullahoma, June 1981.
+9. Guile, A.E. and Hitchcock, J. Phys. D: 
+Appl. Phys., Vol. 7, 597, (1974).
+
+10. K. Nobata and M. Kurokawa, Japanese 
+Journal of Applied Physics, Vol. 28, 501, 
+1989.
+
+11. N. Rykalin, A. Uglov, A. Kokora, "Laser 
+Machining and Welding", Mir Publishers, 
+1978.
+
+12. I.I. Beilis, "Thermal Conditions for the 
+Metal Framework of a Combined MHDG 
+Electrode in a Contracted Discharge",
+High Temperature Physics, Vol. 24, 1173, 
+1986.
+
+8.14-11

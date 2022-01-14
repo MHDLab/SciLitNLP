@@ -1,0 +1,112 @@
+s0_h0_w5_n5colio2 - cathod + anod = ('felio4p', 0.6489306092262268)
+batteri + h - li = ('electrolys', 0.5083492398262024)
+molten_salt + chemic - thermal = ('reagent', 0.5606998801231384)
+cost + cycl - effici = ('long_term', 0.4159162640571594)
+overpotenti + g-1 - ma_cm2 = ('overpotenti_mv', 0.5103552937507629)
+similar words to electrod[('anod', 0.6979711055755615), ('cathod', 0.6834335327148438), ('electrochem', 0.6144657135009766), ('quasi-solid-st', 0.6031203269958496), ('all-solid-st', 0.595397412776947), ('supercapacitor', 0.594943106174469), ('pseudocapacitor', 0.5921995639801025), ('asymmetr', 0.5881701707839966), ('as-fabr', 0.5766378045082092), ('nanohybrid', 0.5665088295936584)]
+
+s0_h0_w5_n10colio2 - cathod + anod = ('felio4p', 0.6647893190383911)
+batteri + h - li = ('electrolyz', 0.5128346681594849)
+molten_salt + chemic - thermal = ('reagent', 0.5227798819541931)
+cost + cycl - effici = ('cyclic', 0.41526660323143005)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.4929470717906952)
+similar words to electrod[('cathod', 0.6828626394271851), ('anod', 0.6618430614471436), ('quasi-solid-st', 0.603737473487854), ('asymmetr', 0.5999933481216431), ('electrochem', 0.5975939035415649), ('as-fabr', 0.592022716999054), ('pseudocapacitor', 0.5853351354598999), ('nanohybrid', 0.5840899348258972), ('supercapacitor', 0.5829924941062927), ('all-solid-st', 0.5751700401306152)]
+
+s0_h0_w5_n15colio2 - cathod + anod = ('felio4p', 0.6395295858383179)
+batteri + h - li = ('electrolys', 0.4133741855621338)
+molten_salt + chemic - thermal = ('reagent', 0.5125786662101746)
+cost + cycl - effici = ('long_term', 0.4443093240261078)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.4871038794517517)
+similar words to electrod[('cathod', 0.6767893433570862), ('anod', 0.6559711694717407), ('as-fabr', 0.6135485768318176), ('quasi-solid-st', 0.5982787609100342), ('electrochem', 0.5842638611793518), ('pseudocapacitor', 0.5825250148773193), ('asymmetr', 0.5812153816223145), ('all-solid-st', 0.5737000107765198), ('h2nio2', 0.5661284327507019), ('supercapacitor', 0.56439608335495)]
+
+s0_h0_w5_n20colio2 - cathod + anod = ('felio4p', 0.6416172981262207)
+batteri + h - li = ('electrolys', 0.479503870010376)
+molten_salt + chemic - thermal = ('reagent', 0.5301607847213745)
+cost + cycl - effici = ('cyclic', 0.43432411551475525)
+overpotenti + g-1 - ma_cm2 = ('revers', 0.48689207434654236)
+similar words to electrod[('cathod', 0.6709888577461243), ('anod', 0.6409953236579895), ('asymmetr', 0.5933889150619507), ('as-fabr', 0.5928071141242981), ('quasi-solid-st', 0.5912976861000061), ('symmetr', 0.5761134028434753), ('hsc', 0.5732452273368835), ('carbonac', 0.5704804062843323), ('electrochem', 0.5700633525848389), ('all-solid-st', 0.570006251335144)]
+
+s0_h0_w10_n5colio2 - cathod + anod = ('felio4p', 0.6180645823478699)
+batteri + h - li = ('electrolys', 0.5428245067596436)
+molten_salt + chemic - thermal = ('precursor', 0.4883574843406677)
+cost + cycl - effici = ('cyclic', 0.4279323220252991)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.5297393202781677)
+similar words to electrod[('electrochem', 0.6607497930526733), ('cathod', 0.6231112480163574), ('supercapacitor', 0.6216979026794434), ('anod', 0.6197671294212341), ('asymmetr', 0.5717519521713257), ('pseudocapacitor', 0.5476237535476685), ('electrolyt', 0.54315185546875), ('pseudocapacit', 0.5312967300415039), ('symmetr', 0.5299583077430725), ('h2nio2', 0.5242950320243835)]
+
+s0_h0_w10_n10colio2 - cathod + anod = ('felio4p', 0.6268159747123718)
+batteri + h - li = ('electrolyz', 0.5142724514007568)
+molten_salt + chemic - thermal = ('reagent', 0.495480477809906)
+cost + cycl - effici = ('long_term', 0.44969815015792847)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.4925898015499115)
+similar words to electrod[('electrochem', 0.6276513934135437), ('cathod', 0.616527795791626), ('anod', 0.6130258440971375), ('supercapacitor', 0.6017656326293945), ('pseudocapacitor', 0.5453107953071594), ('asymmetr', 0.538032591342926), ('h2nio2', 0.5283879041671753), ('co2nis4', 0.5281105637550354), ('as-fabr', 0.5241529941558838), ('symmetr', 0.519926905632019)]
+
+s0_h0_w10_n15colio2 - cathod + anod = ('felio4p', 0.6197922825813293)
+batteri + h - li = ('electrolys', 0.5127648115158081)
+molten_salt + chemic - thermal = ('synthet', 0.5096785426139832)
+cost + cycl - effici = ('long_term', 0.44633036851882935)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.510465681552887)
+similar words to electrod[('electrochem', 0.6257902979850769), ('cathod', 0.6098152995109558), ('supercapacitor', 0.6056398153305054), ('anod', 0.5912445187568665), ('asymmetr', 0.5610252022743225), ('pseudocapacitor', 0.550091564655304), ('h2nio2', 0.5453245639801025), ('as-fabr', 0.5430281162261963), ('pseudocapacit', 0.5389271378517151), ('co2nis4', 0.5342005491256714)]
+
+s0_h0_w10_n20colio2 - cathod + anod = ('felio4p', 0.6005457639694214)
+batteri + h - li = ('electrolys', 0.4909425377845764)
+molten_salt + chemic - thermal = ('synthet', 0.49993202090263367)
+cost + cycl - effici = ('long_term', 0.4652375280857086)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.504295825958252)
+similar words to electrod[('electrochem', 0.6327266693115234), ('cathod', 0.6062031388282776), ('supercapacitor', 0.5951114892959595), ('anod', 0.5894572138786316), ('as-fabr', 0.5655842423439026), ('asymmetr', 0.5640032887458801), ('h2nio2', 0.5571881532669067), ('co2nis4', 0.5398467183113098), ('pseudocapacitor', 0.5386221408843994), ('symmetr', 0.5350771546363831)]
+
+s0_h0_w15_n5colio2 - cathod + anod = ('li4o12ti5', 0.590333878993988)
+batteri + h - li = ('electrolys', 0.552115261554718)
+molten_salt + chemic - thermal = ('synthet', 0.5043880939483643)
+cost + cycl - effici = ('cyclic', 0.4279915690422058)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.5387985706329346)
+similar words to electrod[('electrochem', 0.6747896671295166), ('supercapacitor', 0.6554921269416809), ('anod', 0.5857622623443604), ('electrolyt', 0.5684444308280945), ('cathod', 0.5665381550788879), ('asymmetr', 0.5455376505851746), ('pseudocapacit', 0.5438969731330872), ('pseudocapacitor', 0.5296950936317444), ('nanostructur', 0.49717047810554504), ('electroact', 0.4824577569961548)]
+
+s0_h0_w15_n10colio2 - cathod + anod = ('li4o12ti5', 0.5635582208633423)
+batteri + h - li = ('electrolyz', 0.5377230644226074)
+molten_salt + chemic - thermal = ('synthet', 0.5146017670631409)
+cost + cycl - effici = ('cyclic', 0.4383961260318756)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.5046433806419373)
+similar words to electrod[('electrochem', 0.6665606498718262), ('supercapacitor', 0.6352959871292114), ('cathod', 0.5727670788764954), ('anod', 0.5701804161071777), ('asymmetr', 0.5525562763214111), ('pseudocapacit', 0.5472396612167358), ('electrolyt', 0.5336752533912659), ('pseudocapacitor', 0.5240758061408997), ('symmetr', 0.49819374084472656), ('electrodeposit', 0.49016210436820984)]
+
+s0_h0_w15_n15colio2 - cathod + anod = ('lto', 0.5859168171882629)
+batteri + h - li = ('electrolyz', 0.5372018814086914)
+molten_salt + chemic - thermal = ('synthet', 0.5215959548950195)
+cost + cycl - effici = ('long_term', 0.4379224479198456)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.5017522573471069)
+similar words to electrod[('electrochem', 0.6606022715568542), ('supercapacitor', 0.6237245202064514), ('cathod', 0.5769646167755127), ('anod', 0.5621986985206604), ('asymmetr', 0.5442090630531311), ('pseudocapacit', 0.5263100862503052), ('pseudocapacitor', 0.5143006443977356), ('electrolyt', 0.4969249963760376), ('assembl', 0.4965817332267761), ('electrodeposit', 0.496029794216156)]
+
+s0_h0_w15_n20colio2 - cathod + anod = ('felio4p', 0.5622724890708923)
+batteri + h - li = ('electrolys', 0.47067031264305115)
+molten_salt + chemic - thermal = ('synthet', 0.5091567635536194)
+cost + cycl - effici = ('long_term', 0.4402652084827423)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.5024488568305969)
+similar words to electrod[('electrochem', 0.6568207740783691), ('supercapacitor', 0.6234990358352661), ('cathod', 0.5616288185119629), ('anod', 0.5488688349723816), ('asymmetr', 0.5433447957038879), ('pseudocapacit', 0.5321723818778992), ('pseudocapacitor', 0.5270137786865234), ('electrodeposit', 0.5084368586540222), ('assembl', 0.4965537190437317), ('mno2', 0.48932716250419617)]
+
+s0_h0_w20_n5colio2 - cathod + anod = ('lto', 0.5783579349517822)
+batteri + h - li = ('electrolys', 0.5664575099945068)
+molten_salt + chemic - thermal = ('chemistri', 0.5285930037498474)
+cost + cycl - effici = ('long_term', 0.4323311746120453)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.5250863432884216)
+similar words to electrod[('electrochem', 0.6974959969520569), ('supercapacitor', 0.6397899985313416), ('electrolyt', 0.614808201789856), ('anod', 0.539733350276947), ('cathod', 0.538936972618103), ('pseudocapacit', 0.5365409255027771), ('capacit', 0.5094197392463684), ('asymmetr', 0.5001199245452881), ('pseudocapacitor', 0.4977709650993347), ('electroact', 0.48585838079452515)]
+
+s0_h0_w20_n10colio2 - cathod + anod = ('li4o12ti5', 0.5930920839309692)
+batteri + h - li = ('electrolys', 0.5709913969039917)
+molten_salt + chemic - thermal = ('chemistri', 0.5138140916824341)
+cost + cycl - effici = ('long_term', 0.44180408120155334)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.523786187171936)
+similar words to electrod[('electrochem', 0.6963134407997131), ('supercapacitor', 0.645718514919281), ('electrolyt', 0.5638599395751953), ('pseudocapacit', 0.5446192622184753), ('anod', 0.5360790491104126), ('cathod', 0.5304596424102783), ('asymmetr', 0.5145784020423889), ('pseudocapacitor', 0.5009451508522034), ('electrodeposit', 0.4998350739479065), ('capacit', 0.4936223328113556)]
+
+s0_h0_w20_n15colio2 - cathod + anod = ('si', 0.5533261895179749)
+batteri + h - li = ('electrolys', 0.5304906964302063)
+molten_salt + chemic - thermal = ('synthet', 0.5213216543197632)
+cost + cycl - effici = ('long_term', 0.45778509974479675)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.49516239762306213)
+similar words to electrod[('electrochem', 0.6729639768600464), ('supercapacitor', 0.6343929767608643), ('anod', 0.5351760387420654), ('cathod', 0.5331003069877625), ('asymmetr', 0.5228455662727356), ('pseudocapacit', 0.5142963528633118), ('electrolyt', 0.5134205222129822), ('electrodeposit', 0.49961423873901367), ('capacit', 0.484663188457489), ('assembl', 0.48066189885139465)]
+
+s0_h0_w20_n20colio2 - cathod + anod = ('li4o12ti5', 0.5254687070846558)
+batteri + h - li = ('electrolys', 0.5514001250267029)
+molten_salt + chemic - thermal = ('chemistri', 0.4963129460811615)
+cost + cycl - effici = ('long_term', 0.4515237808227539)
+overpotenti + g-1 - ma_cm2 = ('mah_g-1', 0.49135148525238037)
+similar words to electrod[('electrochem', 0.6808143258094788), ('supercapacitor', 0.6278813481330872), ('anod', 0.5318201780319214), ('cathod', 0.5243433117866516), ('pseudocapacit', 0.5159925818443298), ('electrodeposit', 0.514256477355957), ('electrolyt', 0.5132954120635986), ('asymmetr', 0.5040730834007263), ('electroact', 0.49243950843811035), ('capacit', 0.4750809669494629)]
+
