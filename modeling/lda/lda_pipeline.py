@@ -7,6 +7,7 @@ import networkx as nx
 from nlp_utils.fileio import load_df_semantic
 import nlp_utils as nu
 from sklearn.pipeline import Pipeline
+import json
 #%%
 
 db_folder = r'E:\\'
@@ -14,7 +15,7 @@ con = sqlite3.connect(os.path.join(db_folder, 'soc.db'))
 cursor = con.cursor()
 
 #%%
-fp_general_lit_tw = r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\text_analysis\data\general_lit_top_words.csv'
+fp_general_lit_tw = r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\data\general_lit_top_words.csv'
 gen_lit_tw = pd.read_csv(fp_general_lit_tw,index_col=0)
 gen_lit_remove = gen_lit_tw[0:130].index.values
 
@@ -25,10 +26,14 @@ gen_lit_remove = gen_lit_tw[0:130].index.values
 # G = nx.read_gexf(os.path.join(graph_data_folder, 'G_cit_tree.gexf'))
 # df_tm = load_df_semantic(con, G.nodes)
 
+fp_search_idx = r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\data\indexed_searches.json'
+with open(fp_search_idx, 'r') as f:
+    id_dict = json.load(f)
 
-ids = pd.read_csv(r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\text_analysis\data\indexed_searches.csv')['%energy storage%']
-df_tm = load_df_semantic(con, ids)
+idxs = id_dict['%carbon nanotube%']
+df_tm = load_df_semantic(con, idxs)
 
+#%%
 docs = df_tm['title'] + ' ' + df_tm['paperAbstract']
 texts = docs.apply(str.split)
 
