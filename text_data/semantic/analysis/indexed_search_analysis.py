@@ -42,4 +42,5 @@ plt.xlabel('Year')
 
 plt.suptitle('Abstract or Title Contains \'{}\''.format(search_term.strip('%')))
 plt.ylabel('% Annual Publications')
+plt.savefig('output/search_term_pub_percent.png', facecolor='white')
 # %%

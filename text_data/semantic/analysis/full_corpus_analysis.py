@@ -5,7 +5,7 @@ import os
 import pandas as pd
 import nlp_utils as nu
 import matplotlib.pyplot as plt
-plt.rcParams.update({'font.size': 16})
+plt.rcParams.update({'font.size': 14})
 
 DATASET_DIR = r'E:'
 db_path = os.path.join(DATASET_DIR, 'soc.db')
@@ -29,4 +29,6 @@ plt.xlabel('Year')
 plt.suptitle('Full Semantic Scholar Database')
 plt.ylabel('Annual Publications (Millions)')
 
+# plt.tight_layout()
+plt.savefig('output/full_corpus_pub_annual.png', facecolor='white')
 # %%
