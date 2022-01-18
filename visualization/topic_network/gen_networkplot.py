@@ -124,7 +124,7 @@ pal_dict = {3:custom3, 4:custom4, 5:custom5, 6:custom6, 7:custom7}
 pal = pal_dict[len(set(partition.values()))]
 #calculate the colors based on partition (Louvian community) and recent probability
 fill_colors = [pal[i] for i in partition.values()]
-fill_colors = change_intensity(fill_colors, recent_prob)
+# fill_colors = change_intensity(fill_colors, recent_prob)
 #generate the plot
 plot = figure(plot_width=1200, plot_height=850,
             x_range=Range1d(-1.1, 1.1), y_range=Range1d(-1.1, 1.1))
@@ -134,14 +134,15 @@ plot.add_tools(node_hover_tool,TapTool())
 plot.axis.visible = False
 
 #render the graph
-graph_renderer = from_networkx(G, nx.kamada_kawai_layout, scale=1, center=(0, 0))
+graph_renderer = from_networkx(G, nx.spring_layout, scale=1, center=(0, 0))
 
 #add node data to the source data
 source_graph = graph_renderer.node_renderer.data_source
 source_graph.add(fill_colors, 'color')
+source_graph.add(0.5+0.5*recent_prob, 'fill_alpha')
 source_graph.add(top_papers_topic, 'top_papers_topic')
 source_graph.add(top_papers_6_10, 'top_papers_6_10')
-graph_renderer.node_renderer.glyph = Circle(radius = 'size', fill_color = 'color', radius_units='screen')
+graph_renderer.node_renderer.glyph = Circle(radius = 'size', fill_color = 'color', radius_units='screen', fill_alpha='fill_alpha')
 
 #add edge data to the source data
 source_edges = graph_renderer.edge_renderer.data_source
