@@ -10,9 +10,14 @@ from tqdm import tqdm
 
 import sqlite3
 
+#Output sqlite database path 
 con = sqlite3.connect(r'C:\Users\aspit\Git\MLEF-Energy-Storage\semantic_opencorpus\data\soc.db')
+
+#Temporary folder for downloaded .gz files
 METADATA_DIR = r'C:\Users\aspit\Git\MLEF-Energy-Storage\semantic_opencorpus\data\destinationPath'
 
+#The semantic scholar dataset contains topic classificaitons from Microsoft Academic. The datset can be downselected to relevant topics.
+# See the relative number of each paper here https://github.com/allenai/s2orc
 mag_keep = [
     # 'Biology',
     'Chemistry',
