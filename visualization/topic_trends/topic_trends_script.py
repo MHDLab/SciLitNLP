@@ -64,12 +64,12 @@ highlight_topics = []
 year_range_fit = slice(2015,2020)
 year_range_plot = slice(1990,2020)
 
-nu.plot.top_slopes_plot(df_topicsyear.loc[year_range_plot], s_topic_words, year_range_fit, n_plots=10, highlight_topics=highlight_topics)
+nu.plot.top_slopes_plot(df_topicsyear.loc[year_range_plot], s_topic_words, year_range_fit, n_plots=5, highlight_topics=highlight_topics)
 
 plt.savefig('output/top_slopes_plot.png')
 
 
-nu.plot.top_slopes_plot(df_topicsyear.loc[year_range_plot], s_topic_words, year_range_fit, n_plots=10, highlight_topics=highlight_topics,ascending=True)
+nu.plot.top_slopes_plot(df_topicsyear.loc[year_range_plot], s_topic_words, year_range_fit, n_plots=5, highlight_topics=highlight_topics,ascending=True)
 
 plt.savefig('output/neg_slopes_plot.png')
 

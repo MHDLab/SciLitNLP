@@ -92,7 +92,7 @@ intro_text = Div(text="""
 <h3> Each node represents a topic and each edge between two topics represents the likelihood of the two topics appearing in an abstract together.<br>
 <b>NODE COLOR:</b> community assigned by the Louvain community detection algorithm.<br>
 <b>NODE SIZE:</b> overall probability of the topic appearing in abstracts.<br>
-<b>NODE BRIGHTNESS:</b> probability of the topic appearing in abstracts over the past 5 years (brighter = higher probability).<br>
+<b>NODE OPACITY:</b> probability of the topic appearing in abstracts over the past 5 years (brighter = higher probability).<br>
 <b>EDGE THICKNESS:</b> probability of two topics occurring in the same abstract.<br>
 (Note, graph projection is designed to make it easier to see connections between nodes.  The axes do not communicate additional information.)<br><br>
 You can select different topics to pull up additional information including the probability of abstracts containing topics over time and papers with the highest probability of containing the selected topic.<br>
@@ -590,7 +590,7 @@ layout =  column(
 
 #%%
 #save and show
-output_fp = "output/ES_networkplot.html"
+output_fp = "output/topic_network.html"
 
 if not os.path.exists("output"): 
     os.mkdir('output')

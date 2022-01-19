@@ -30,7 +30,7 @@ fp_search_idx = r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\data\index
 with open(fp_search_idx, 'r') as f:
     id_dict = json.load(f)
 
-idxs = id_dict['%carbon nanotube%']
+idxs = id_dict['%energy storage%']
 df_tm = load_df_semantic(con, idxs)
 
 #%%
@@ -50,7 +50,7 @@ pipeline = Pipeline([
 
 texts_bigram = pipeline.fit_transform(texts)
 
-n_topics = 30
+n_topics = 50
 alpha = 1/n_topics
 
 lda_kwargs = {'alpha': alpha, 'eta': 0.03, 'num_topics':n_topics, 'passes':5}
