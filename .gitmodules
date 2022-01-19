@@ -1,0 +1,3 @@
+[submodule "nlp_utils"]
+	path = nlp_utils
+	url = https://github.com/MHDLab/nlp_utils
