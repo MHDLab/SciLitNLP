@@ -11,10 +11,7 @@ import requests
 
 # # Get all metadata
 # for i in range(3,35):
-
 #     r = requests.get(r'https://edx.netl.doe.gov/dataset/package_metadata/seam-' + str(i), allow_redirects=True)
-
-
 #     t = r.text
 
 #     with open('edx_metadata/seam-' + str(i) + '.json', 'w') as f:
@@ -24,13 +21,15 @@ import requests
 
 
 #%%
+import sqlite3
+import nlp_utils as nu
+db_path = os.path.join(os.getenv('DB_FOLDER'), 'seams.db')
+con = sqlite3.connect(db_path)
+df_tm = nu.fileio.load_df_SEAMs(con).dropna(subset=['OCR_text'])
 
-metadata_path = r'C:\Users\aspit\National Energy Technology Laboratory\MHD Lab - Documents\Publications\SEAMs\SEAMs_metadata.csv'
-df_meta = pd.read_csv(metadata_path, index_col=0)
+page_urls = pd.Series(index=df_tm.index, name='pdf_url')
 
-page_urls = pd.Series(index=df_meta.index, name='pdf_url')
-
-json_folder = r'C:\Users\aspit\Git\MHDLab-Projects\NLP_MHD\pdf_management\edx_metadata'
+json_folder = r'edx_metadata'
 
 fps = [os.path.join(json_folder, fn) for fn in os.listdir(json_folder)]
 
@@ -58,12 +57,9 @@ for fp in fps:
 
         page_urls[doc_id] = page_url
 
+page_urls.to_csv('edx_urls.csv')
+
+
 # %%
 
 
-df_meta = pd.concat([df_meta, page_urls], axis=1)
-
-#%%
-
-df_meta.to_csv(metadata_path)
-# %%

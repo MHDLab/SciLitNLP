@@ -27,7 +27,8 @@ db_path = os.path.join(os.getenv('DB_FOLDER'), 'seams.db')
 con = sqlite3.connect(db_path)
 df = load_df_SEAMs(con).dropna(subset=['OCR_text'])
 df['inCitations'] = ''
-df['display_url'] = ''
+edx_url_path = os.path.join(os.getenv('REPO_DIR'), 'text_data/seams/pdf_management/edx_urls.csv')
+df['display_url'] = pd.read_csv(edx_url_path, index_col=0).loc[df.index]
 
 s_topic_words = nu.corex_utils.get_s_topic_words(topic_model, 10)
 
@@ -51,5 +52,5 @@ da_sigma, da_doc_topic = nu.corex_utils.calc_cov_corex(topic_model, s_anchor.ind
 #%%
 
 from pipeline_data_prep import pipeline_data_prep
-pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_probs, da_sigma, min_edge_weight = 0.1, size_norm=10)
+pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_probs, da_sigma, min_edge_weight = 0.1, size_norm=3)
 
