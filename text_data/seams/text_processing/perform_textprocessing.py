@@ -3,25 +3,20 @@ import pandas as pd
 import sqlite3
 import os
 import ast
+import nlp_utils as nu
+from dotenv import load_dotenv
+load_dotenv()
+
+from utils import tokenizer, flag
 
 
-import sys
-sys.path.append('nlp_utils')
-from nlp_utils.textprocess import tokenizer, flag
-
-import git
-repopath = git.Repo('.', search_parent_directories=True).working_tree_dir
-data_folder = os.path.join(repopath, 'data')
-
-
-
-con = sqlite3.connect(os.path.join(data_folder, 'seamsnlp_final.db'))
+db_path = os.path.join(os.getenv('DB_FOLDER'), 'seams.db')
+con = sqlite3.connect(db_path)
 cursor = con.cursor()
-
-df_text = pd.read_sql_query("SELECT * FROM texts", con, index_col='ID').dropna(subset=['OCR_text'])
+df_text = nu.fileio.load_df_SEAMs(con).dropna(subset=['OCR_text'])
 #%%
 
-#TODO: move to a file dictionary? 
+data_folder = 'settings'
 with open(os.path.join(data_folder,"autocorrect.txt"), encoding='utf-8') as f:
     custom_autocorrect = f.read().splitlines()
 
@@ -55,7 +50,7 @@ if 'misspelled' not in names:
 #%%
 ids = df_text.dropna(subset=['OCR_text']).index
 
-# ids = [id for id in ids if id in range(1828,1829)]
+# ids = [id for id in ids if id in range(1825,1829)]
 
 for id in ids:
     text = df_text['OCR_text'][id]
@@ -71,4 +66,4 @@ for id in ids:
     cursor.execute(query, (misspelled, id))
 
     con.commit()
-# %%
+# # %%

@@ -1,0 +1,264 @@
+magnetohydrodynamic
+mhd
+plasma
+tensor
+phase
+electrode
+magnetogasdynamic
+open cycle
+two-dimensional
+one-dimensional
+three-dimensional
+two phase
+liquid-metal
+steady-state
+voltage current
+water cooled
+high-temperature
+cross-sectional
+cross-section
+short circuit
+two-stage
+boundary layer
+open circuit
+closed cycle
+mhd steam
+superconductor
+temperature
+demetriades
+combustion driven
+large-scale
+quasi-one-dimensional
+thruster
+time-dependent
+cross-correlation
+combustion
+long duration
+electron-ion
+low-temperature
+mhd generator
+slag seed
+current voltage
+two-temperature
+single-phase
+three-phase
+full-scale
+oxygen enriched
+conductivity
+helium cesium
+semi-hot
+joule heating
+mhd channel
+x-direction
+y-direction
+z-direction
+magnetic
+directly fired
+electrode pair
+direct-fired
+electrical
+generator
+faraday-type
+potassium-seeded
+power plant
+small-scale
+time average
+long-term
+second-stage
+traveling wave
+near electrode
+energy loss
+liquid
+coil group
+shock wave
+cesium lithium
+mhd power
+first-order
+input-output
+fuel-rich
+dipole
+high-frequency
+mhd channel
+separately fired
+nonuniformity
+shock tunnel
+coal-fired
+exit
+shock tube
+air gap
+coal-burned
+field
+short-cicruited
+electron-neutral
+direct coal-fired
+pre-breakdown
+heat transfer
+empty-channel
+self-excited
+argon cesium
+single-load
+separation
+stainless steel
+heat sink
+cesium-seeded
+nonuniform
+short period
+finite difference
+electron atom
+volt ampere
+infrared
+fuel
+flow train
+calculation
+electrode insulator
+flow meter
+fabry-perot
+fabry
+perot
+performance
+pressure gradient
+no concentration
+short duration
+half-width
+one-third
+magnesia-chrome
+power take-off
+intercooler
+magnetically induced
+flow field
+segmented electrode
+direct-fired
+central station
+traveling field
+mhd convertor
+magnetic field
+anode cathode
+high efficiency
+non-steady
+diagonally connected
+electron-electron
+hall effect
+steam-water
+insulator initiated
+seed to slag
+air cooled
+non-slagging
+low-grade
+one wavelength
+electrode wall
+ambient temperature
+void fraction
+conversion
+existence
+self-contained
+density
+partially ionized
+nonequilibrium
+characteristic
+zero field
+surface active
+magnesia-chromite
+hydrogen oxygen
+cold electrode
+non-constant
+momentum transfer
+x-component
+y-component
+z-component
+x-axis
+y-axis
+z-axis
+current-carrying
+low frequency
+inflow outflow
+sodium nitrogen
+axisymmetric
+linear
+particle
+afterburner
+indirectly fired
+slag free
+slag electrode
+slag metal
+coal combustion
+energy conversion
+atmospheric pressure
+fluid dynamic
+high velocity
+alkali metal
+alkali metal vapor
+sodium potassium
+parameter
+atom-atom
+continuous
+independent
+plasma initiated
+finite element
+electrode slag
+steam turbine
+characteristic
+finite width
+high purity
+slightly ionized
+experimental
+navier stokes
+stoichiometric
+hydrodynamics
+coal gasification
+anode sidewall
+nitrogen oxygen
+insulator
+condensable
+nondimensional
+gas cooled
+channel to inverter
+low interaction
+thermal mechanical
+metallography
+quasi stable
+viscosity temperature
+heterogeneous
+energy
+finite gap
+fossil-fired
+preionization
+nuclear mhd
+fluid
+fluid flow
+optical wavelength
+optical
+wavelength
+uniformities
+distribution
+deexcitation
+preionize
+hydrogen oxygen
+characteristic
+volatilization
+consideration
+feldmann
+air-fuel
+inverter
+collision
+accelerate
+accelerator
+dispersion
+comparison
+slag
+seed
+accurate
+incompressible
+compressible
+velocity
+hydromagnetic
+velocity hydromagnetic
+transverse
+phenomena
+function
+potassium
+gaseous
+magnetoplasma
+oscillogram
+analysis
+polarization
+air preheater
