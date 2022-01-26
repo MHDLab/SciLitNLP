@@ -13,15 +13,19 @@ from gensim.models import LdaModel
 from nlp_utils import gensim_utils, sklearn_utils, fileio
 from nlp_utils.fileio import load_df_semantic
 import sqlite3
+from dotenv import load_dotenv
+load_dotenv()
+
+
 
 #Load in LDA model (should match text data)
 model_name = 'ldamod_cit_tree'
-lda_models_folder = r'C:\Users\aspit\Git\NLP\SciLitNLP\modeling\lda\models'
+lda_models_folder = os.path.join(os.getenv('REPO_DIR'), r'modeling/lda/models')
 lda_model_loaded = LdaModel.load(os.path.join(lda_models_folder, model_name + '.lda'))
 
 # Load in paper data, assumes lda model file has a property 'idx' with indices of modeled papers. 
-db_folder = r'E:\\'
-con = sqlite3.connect(os.path.join(db_folder, 'soc.db'))
+db_path = os.path.join(os.getenv('SOC_DB_DIR'), 'soc.db')
+con = sqlite3.connect(db_path)
 cursor = con.cursor()
 df = load_df_semantic(con, lda_model_loaded.idx)
 df = df.rename({'year': 'Year', 's2Url': 'display_url'}, axis=1)

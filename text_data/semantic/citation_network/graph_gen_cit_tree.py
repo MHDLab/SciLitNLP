@@ -7,15 +7,19 @@ import xarray as xr
 import os
 import sqlite3
 import networkx as nx
+import json
 
 import matplotlib.pyplot as plt
 from nlp_utils.fileio import load_df_semantic
 import nlp_utils as nu
 
 from nlp_utils.citation import gen_citation_tree, trim_graph_fraction, get_citation_info, trim_graph_inCits, trim_graph_num_edges, trim_graph_size
+from dotenv import load_dotenv
+load_dotenv()
 
-db_folder = r'E:\\'
-con = sqlite3.connect(os.path.join(db_folder, 'soc.db'))
+
+db_path = os.path.join(os.getenv('SOC_DB_DIR'), 'soc.db')
+con = sqlite3.connect(db_path)
 cursor = con.cursor()
 
 
@@ -29,11 +33,11 @@ def set_round(G, round):
             G.nodes[node]['round'] = round
     return G
 
-# regex = '%geographic information system%'
-# ids = nu.fileio.gen_ids_searchterm(con, regex, idx_name='id', search_fields=['paperAbstract', 'title'], search_limit=int(25e6), output_limit=10000)
-ids = pd.read_csv(r'C:\Users\aspit\Git\NLP\SciLitNLP\data_wrangling\semantic\text_analysis\data\indexed_searches.csv')['%energy storage%']
-ids = ids.iloc[0:10000]
-ids
+fp_search_idx = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/indexed_searches.json')
+with open(fp_search_idx, 'r') as f:
+    id_dict = json.load(f)
+
+ids = id_dict['%energy storage%']
 #%%
 
 def trim_graph(G, n_max):

@@ -12,7 +12,7 @@ import nlp_utils as nu
 import sqlite3
 
 #Load in LDA model
-lda_models_folder = r'C:\Users\aspit\Git\NLP\SciLitNLP\modeling\lda\models'
+lda_models_folder = os.path.join(os.getenv('REPO_DIR'), r'modeling\lda\models')
 lda_model_loaded = LdaModel.load(os.path.join(lda_models_folder, 'ldamod_cit_tree.lda'))
 
 # Load in paper data, assumes lda model file has a property 'idx' with indices of modeled papers. 

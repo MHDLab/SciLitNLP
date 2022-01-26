@@ -17,13 +17,13 @@ db_folder = r'E:\\'
 con = sqlite3.connect(os.path.join(db_folder, 'soc.db'))
 cursor = con.cursor()
 
-ids = pd.read_csv(r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\text_analysis\data\indexed_searches.csv')['%energy storage%']
+ids = pd.read_csv(os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/indexed_searches.csv')['%energy storage%')]
 df_tm = nu.fileio.load_df_semantic(con, ids)
 
 docs = df_tm['title'] + ' ' + df_tm['paperAbstract']
 texts = docs.apply(str.split)
 
-fp_general_lit_tw = r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\text_analysis\data\general_lit_top_words.csv'
+fp_general_lit_tw = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/general_lit_top_words.csv')
 gen_lit_tw = pd.read_csv(fp_general_lit_tw,index_col=0)
 gen_lit_remove = gen_lit_tw[0:130].index.values
 fixed_bigrams = []

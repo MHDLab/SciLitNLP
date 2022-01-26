@@ -8,25 +8,27 @@ from nlp_utils.fileio import load_df_semantic
 import nlp_utils as nu
 from sklearn.pipeline import Pipeline
 import json
-#%%
+from dotenv import load_dotenv
+load_dotenv()
 
-db_folder = r'E:\\'
-con = sqlite3.connect(os.path.join(db_folder, 'soc.db'))
+
+db_path = os.path.join(os.getenv('SOC_DB_DIR'), 'soc.db')
+con = sqlite3.connect(db_path)
 cursor = con.cursor()
 
 #%%
-fp_general_lit_tw = r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\data\general_lit_top_words.csv'
+fp_general_lit_tw = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/general_lit_top_words.csv')
 gen_lit_tw = pd.read_csv(fp_general_lit_tw,index_col=0)
 gen_lit_remove = gen_lit_tw[0:130].index.values
 
 
 #%%
 #Literature to analyze 
-# graph_data_folder = r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\citation_network\graphs'
+# graph_data_folder = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/citation_network/graphs')
 # G = nx.read_gexf(os.path.join(graph_data_folder, 'G_cit_tree.gexf'))
 # df_tm = load_df_semantic(con, G.nodes)
 
-fp_search_idx = r'C:\Users\aspit\Git\NLP\SciLitNLP\text_data\semantic\data\indexed_searches.json'
+fp_search_idx = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/indexed_searches.json')
 with open(fp_search_idx, 'r') as f:
     id_dict = json.load(f)
 
@@ -61,4 +63,5 @@ lda_model.texts_bigram = texts_bigram
 lda_model.id2word = id2word
 lda_model.data_words = data_words
 lda_model.idx = df_tm.index.values
-lda_model.save(r'models\ldamod_cit_tree.lda')
+if not os.path.exists('models'): os.mkdir('models')
+lda_model.save(r'models/ldamod_cit_tree.lda')

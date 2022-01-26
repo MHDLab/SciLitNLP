@@ -39,7 +39,7 @@ Similar words are closer together.<br><br> </h2>""")
 
 #Choose model to visualize
 
-mod = Word2Vec.load(r'C:\Users\aspit\Git\NLP\SciLitNLP\modeling\word2vec\models\word2vec_semantic.model')
+mod = Word2Vec.load(os.path.join(os.getenv('REPO_DIR'), r'modeling\word2vec\models\word2vec_semantic.model'))
 
 #Generate a vector representation (X) of a collection of words
 vocab = list(mod.wv.key_to_index.keys())

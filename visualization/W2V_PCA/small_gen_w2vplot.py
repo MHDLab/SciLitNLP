@@ -35,7 +35,7 @@ These plots represent the proximity of these word vectors projected to 2D space 
 Similar words are closer together.<br><br> </h2>""")
 
 #Choose model to visualize
-mod = Word2Vec.load(r'C:\Users\aspit\Git\NLP\SciLitNLP\modeling\word2vec\models\word2vec_semantic.model')
+mod = Word2Vec.load(os.path.join(os.getenv('REPO_DIR'), r'modeling\word2vec\models\word2vec_semantic.model'))
 #pca= PCA(n_components=2)
 tsne = TSNE(n_components=2, random_state=0)
 #Generate a vector representation (X) of a collection of words

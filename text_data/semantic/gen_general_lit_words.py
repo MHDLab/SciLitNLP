@@ -5,9 +5,12 @@ import os
 import sqlite3
 import networkx as nx
 from nlp_utils.fileio import load_df_semantic
+from dotenv import load_dotenv
+load_dotenv()
 
-db_folder = r'E:\\'
-con = sqlite3.connect(os.path.join(db_folder, 'soc.db'))
+
+db_path = os.path.join(os.getenv('SOC_DB_DIR'), 'soc.db')
+con = sqlite3.connect(db_path)
 cursor = con.cursor()
 
 #%%
