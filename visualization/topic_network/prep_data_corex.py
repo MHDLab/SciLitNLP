@@ -52,5 +52,5 @@ da_sigma, da_doc_topic = nu.corex_utils.calc_cov_corex(topic_model, s_anchor.ind
 #%%
 
 from pipeline_data_prep import pipeline_data_prep
-pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_probs, da_sigma, min_edge_weight = 0.1, size_norm=3)
+pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_probs, da_sigma, min_edge_weight = 0, size_norm=1)
 

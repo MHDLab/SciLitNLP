@@ -8,11 +8,11 @@ from corex_pipeline import corex_pipeline
 db_path = os.path.join(os.getenv('DB_FOLDER'), 'seams.db')
 con = sqlite3.connect(db_path)
 df_tm = nu.fileio.load_df_SEAMs(con).dropna(subset=['OCR_text'])
-docs = df_tm['title'] + ' ' + df_tm['OCR_text']
+docs = df_tm['title'] + ' ' + df_tm['processed_text']
 
 stopwords=[]
 
-corex_anchors = ['corros','anti_corros', 'corrosion_resist']
+corex_anchors = ['corros','corros','corros']
 fixed_bigrams = nu.corex_utils.anchors_to_fixed_bigrams(corex_anchors)
 
 topic_model = corex_pipeline(docs, stopwords, corex_anchors, fixed_bigrams)
