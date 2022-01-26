@@ -60,7 +60,7 @@ A .env file need to be created in the base repodirectory (alongside README.md) f
 
 ```
 REPO_DIR = 'path/to/SciLitNLP'
-SOC_DB_DIR = 'path/to/soc/database'
+DB_FOLDER = 'path/to/soc/database'
 ```
 
 
