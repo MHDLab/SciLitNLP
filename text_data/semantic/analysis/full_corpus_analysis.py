@@ -6,9 +6,11 @@ import pandas as pd
 import nlp_utils as nu
 import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 14})
+from dotenv import load_dotenv
+load_dotenv()
 
-DATASET_DIR = r'E:'
-db_path = os.path.join(DATASET_DIR, 'soc.db')
+
+db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
 con = sqlite3.connect(db_path)
 
 YEAR_RANGE = slice(1950,2019)

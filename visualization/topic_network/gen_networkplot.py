@@ -64,8 +64,9 @@ df_edgekeywords = pd.read_csv(os.path.join(data_folder, 'edge_keywords.csv'), in
 top_papers_edge = pd.read_csv(os.path.join(data_folder, 'top_papers_edge.csv'), index_col=0, squeeze=True)[present_edges]
 edge_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'edge_papers_6_10.csv'), index_col=0, squeeze=True)[present_edges]
 
-#calculate the probability over the past 5 years
-recent_prob = df_topic_year.loc[2015:2020].mean()
+#calculate the probability over the past 5 years of dataset
+last_5_years = df_topic_year.index[-5:]
+recent_prob = df_topic_year.loc[last_5_years].mean()
 recent_prob = recent_prob/recent_prob.max()
 
 # function for adjusting color intensity as a function of the probability over the past 5 years
@@ -497,7 +498,7 @@ for t in communities:
 GL = nx.relabel.relabel_nodes(GL, label_mapping)
 
 #calculate the probability over the past 5 years
-recent_group_prob = group_year.loc[2015:2020].mean()
+recent_group_prob = group_year.loc[last_5_years].mean()
 recent_group_prob = recent_group_prob/recent_group_prob.max()
 source_group_year = ColumnDataSource(data=group_year)
 

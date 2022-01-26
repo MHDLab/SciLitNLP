@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-db_path = os.path.join(os.getenv('SOC_DB_DIR'), 'soc.db')
+db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
 con = sqlite3.connect(db_path)
 cursor = con.cursor()
 

@@ -13,7 +13,7 @@ import sqlite3
 
 #Load in LDA model
 lda_models_folder = os.path.join(os.getenv('REPO_DIR'), r'modeling\lda\models')
-lda_model_loaded = LdaModel.load(os.path.join(lda_models_folder, 'ldamod_cit_tree.lda'))
+lda_model_loaded = LdaModel.load(os.path.join(lda_models_folder, 'ldamod.lda'))
 
 # Load in paper data, assumes lda model file has a property 'idx' with indices of modeled papers. 
 db_folder = r'E:\\'

@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-db_path = os.path.join(os.getenv('SOC_DB_DIR'), 'soc.db')
+db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
 con = sqlite3.connect(db_path)
 
 #TODO: I wonder if it might be faster doing first pass to see if there were any of the search terms, then search for each term in that subset.
