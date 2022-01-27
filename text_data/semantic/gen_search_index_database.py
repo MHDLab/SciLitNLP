@@ -5,29 +5,22 @@ import os
 import pandas as pd
 import nlp_utils as nu
 import json
+import argparse
 from dotenv import load_dotenv
 load_dotenv()
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-t', '--terms', nargs='+', default=[], help="search terms (e.g. \"carbon nanotube\") separated by spaces")
+parser.add_argument('-l', '--limit', type=float, default=1e10, help="Search limit (e.g. 1e5) will be converted to int")
 
 
 db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
 con = sqlite3.connect(db_path)
 
-#TODO: I wonder if it might be faster doing first pass to see if there were any of the search terms, then search for each term in that subset.
-regexes = [
-    'energy storage',
-    # 'carbon nanotube',
-    # 'electricity storage',
-    # 'lithium ion',
-    # 'lead acid',
-    # 'solid oxide fuel cell',
-    # 'compressed air',
-    # 'pumped thermal',
-    # 'thermomechanical',
-    # 'thermal energy storage', #just thermal would probably be a lot of articles...
-    # 'flywheel',
-    # 'superconducting magnetic',
-    # 'supercapacitor',
-]
+args = parser.parse_args()
+terms = args.terms
+search_limit = int(args.limit)
 
 if not os.path.exists('data'): os.mkdir('data')
 fp_search_idxs = 'data/indexed_searches.json'
@@ -37,7 +30,7 @@ if os.path.exists(fp_search_idxs):
 else:
     id_dict = {}
 
-regexes = ['%' + r + '%' for r in regexes]
+regexes = ['%{}%'.format(r) for r in terms]
 for regex in regexes:
 
     print('Searching for regex: ' + regex)
@@ -46,7 +39,7 @@ for regex in regexes:
         regex, 
         idx_name='id', 
         search_fields=['paperAbstract', 'title'], 
-        search_limit=int(1e10), 
+        search_limit=search_limit, 
         output_limit=1e10
     )
     # all_ids.append(ids)

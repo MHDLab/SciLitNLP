@@ -20,19 +20,21 @@ import os
 data_folder = 'data'
 
 import sys
+import argparse
 
-
+parser = argparse.ArgumentParser()
+parser.add_argument('-r', '--resolution', type=float, default=1, help="Louvain community resolution")
+parser.add_argument('-sn', '--size-norm', type=float, default=1, help="Number to divide node size by (make smaller)")
+parser.add_argument('--show', action='store_true', help="Show bokeh plot (refresh page if false)")
+args = parser.parse_args()
 
 # Generate Louvian Communities
 #load graph
 G = nx.read_gexf(os.path.join(data_folder,'G_topic.gexf'))
 
-if len(sys.argv) > 1:
-    resolution = float(sys.argv[1])
-else:
-    resolution = 1
+
     
-partition = community_louvain.best_partition(G, resolution = resolution, random_state=2)
+partition = community_louvain.best_partition(G, resolution = args.resolution, random_state=2)
 print('Number Partitions ' + str(list(set(partition.values()))))
 
 #get colormap
@@ -40,7 +42,7 @@ cmap = cm.get_cmap('Set1', max(partition.values())+1 )
 
 # square root scaling of edge size and weight to bring out smaller topics a bit.  
 for node in G.nodes:
-    G.nodes[node]['size'] = np.sqrt(G.nodes[node]['size'])*3
+    G.nodes[node]['size'] = np.sqrt(G.nodes[node]['size']/args.size_norm)*3
 
 for edge in G.edges:
     G.edges[edge]['weight'] = np.sqrt(G.edges[edge]['weight'])*1.5
@@ -596,8 +598,11 @@ output_fp = "output/topic_network.html"
 if not os.path.exists("output"): 
     os.mkdir('output')
 
-output_file(filename=output_fp, title = 'Topic Modeling wtih LDA')
+output_file(filename=output_fp, title = 'Topic Modeling')
 
-show(layout)
+if args.show:
+    show(layout)
+else:
+    save(layout)
 
 # %%

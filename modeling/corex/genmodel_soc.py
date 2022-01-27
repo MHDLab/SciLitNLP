@@ -2,31 +2,55 @@ import pandas as pd
 import os
 import json
 import sqlite3
+import networkx as nx
+import argparse
 import nlp_utils as nu
 from corex_pipeline import corex_pipeline
 
-fp_general_lit_tw = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/general_lit_top_words.csv')
-gen_lit_tw = pd.read_csv(fp_general_lit_tw,index_col=0)
-stopwords = gen_lit_tw[0:130].index.values
+parser = argparse.ArgumentParser()
+parser.add_argument('-d', '--dataset', type=str, choices = ['search', 'cit_tree'], help="Which type of dataset to use (previously generated)")
+parser.add_argument('-t', '--term', type=str, default = '', help="search term (e.g. \"carbon nanotube\") generated from indexed search (if using indexed search dataset)")
+parser.add_argument('-tw', '--remove-top-words', action='store_true', help="Use general literature data stopwords")
 
+args = parser.parse_args()
+
+if args.remove_top_words:
+    print("using general literature stopwords")
+    fp_general_lit_tw = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/general_lit_top_words.csv')
+    gen_lit_tw = pd.read_csv(fp_general_lit_tw,index_col=0)
+    stopwords = gen_lit_tw[0:130].index.values
+else:
+    print("Not using general literature stopwords")
+    stopwords = []
 
 db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
 con = sqlite3.connect(db_path)
 cursor = con.cursor()
 
-# graph_data_folder = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/citation_network/graphs')
-# G = nx.read_gexf(os.path.join(graph_data_folder, 'G_cit_tree.gexf'))
-# df_tm = load_df_semantic(con, G.nodes)
+if args.dataset == 'cit_tree':
+    graph_data_folder = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/citation_network/graphs')
+    G = nx.read_gexf(os.path.join(graph_data_folder, 'G_cit_tree.gexf'))
+    df_tm = nu.fileio.load_df_semantic(con, G.nodes)
 
-fp_search_idx = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/indexed_searches.json')
-with open(fp_search_idx, 'r') as f:
-    id_dict = json.load(f)
+    dataset_description = "Citation tree generated from the Semantic Scholar Academic Graph"
+elif args.dataset == 'search':
 
-idxs = id_dict['%energy storage%']
-df_tm = nu.fileio.load_df_semantic(con, idxs)
+    fp_search_idx = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/indexed_searches.json')
+    with open(fp_search_idx, 'r') as f:
+        id_dict = json.load(f)
+
+    search_term = '%{}%'.format(args.term)
+    if not search_term in id_dict:
+        raise ValueError("Search term {} not found in indexed searches".format(args.term))
+
+    idxs = id_dict[search_term]
+    df_tm = nu.fileio.load_df_semantic(con, idxs)
+
+    dataset_description = "Papers in the Semantic Scholar Academic Graph containing the term {} in the paper or abstract"
+else:
+    raise ValueError("Didn't get valid dataset type ") # Shouldn't happen with choices in parseargs...
+
 docs = df_tm['title'] + ' ' + df_tm['paperAbstract']
-
-
 
 print("Corex Topic Modeling")
 
@@ -34,6 +58,8 @@ corex_anchors = []
 fixed_bigrams = nu.corex_utils.anchors_to_fixed_bigrams(corex_anchors)
 
 topic_model = corex_pipeline(docs, stopwords, corex_anchors, fixed_bigrams)
+
+topic_model.dataset_description = dataset_description
 
 import _pickle as cPickle
 #Save model

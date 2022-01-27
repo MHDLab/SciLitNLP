@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import nlp_utils.common as nu_common 
 
-def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_probs, da_sigma, min_edge_weight, size_norm):
+def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_probs, da_sigma, min_edge_weight):
     s_year = pd.Series(df['year'].dropna(), index=df.index)
 
 
@@ -115,7 +115,7 @@ def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_pro
 
     for node in G.nodes:
         G.nodes[node]['disp_text'] = topic_keywords[node].replace(',', '\n')
-        G.nodes[node]['size'] = df_doc_topic_probs.sum()[node]/size_norm
+        G.nodes[node]['size'] = df_doc_topic_probs.sum()[node]
 
 
     print('Writing graph to disk')
