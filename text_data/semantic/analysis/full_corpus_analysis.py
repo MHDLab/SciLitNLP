@@ -19,7 +19,7 @@ YEAR_RANGE = slice(1950,2019)
 years = nu.fileio.get_columns_as_df(con, ['year'])['year'].astype(int)
 years
 #%%
-
+if not os.path.exists('data'): os.mkdir('data')
 year_counts = years.value_counts().sort_index()
 year_counts.to_csv('data/full_corpus_year_counts.csv')
 
