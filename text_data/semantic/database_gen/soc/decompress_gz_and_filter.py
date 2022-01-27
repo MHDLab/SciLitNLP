@@ -11,10 +11,14 @@ from tqdm import tqdm
 import sqlite3
 
 #Output sqlite database path 
-con = sqlite3.connect(r'C:\Users\aspit\Git\MLEF-Energy-Storage\semantic_opencorpus\data\soc.db')
+if not os.path.exists('output'): os.mkdir('output')
+if os.path.exists('output/soc.db'): 
+    print("Removing existing database...")
+    os.remove('output/soc.db')
+con = sqlite3.connect('output/soc.db')
 
-#Temporary folder for downloaded .gz files
-METADATA_DIR = r'C:\Users\aspit\Git\MLEF-Energy-Storage\semantic_opencorpus\data\destinationPath'
+#Temporary folder withfor downloaded .gz files
+gz_folder = 'temp_gz'
 
 #The semantic scholar dataset contains topic classificaitons from Microsoft Academic. The datset can be downselected to relevant topics.
 # See the relative number of each paper here https://github.com/allenai/s2orc
@@ -32,12 +36,12 @@ mag_keep = [
 ]
 
 
-parse_files = [f for f in os.listdir(METADATA_DIR) if '.gz' in f]
+parse_files = [f for f in os.listdir(gz_folder) if '.gz' in f]
 
 for metadata_file in parse_files:
     print('processing file ' + str(metadata_file))
 
-    with gzip.open(os.path.join(METADATA_DIR, metadata_file), 'rb') as gz:
+    with gzip.open(os.path.join(gz_folder, metadata_file), 'rb') as gz:
         f = io.BufferedReader(gz)
 
         ds = []
@@ -65,6 +69,16 @@ for metadata_file in parse_files:
 
         df = pd.DataFrame(ds)
         df = df.where(df['paperAbstract'].isnull() == False).dropna(how='all') #Think this is already covered above now.
+
+        #When redownloading test soc dataset, got data with missing years that messes up conversion to int. 
+        df['year'] = df['year'].astype(float)
+        
+        na_years = df['year'].isna().sum()
+        if na_years > 0:
+            print("Found {} records with missing years, dropping".format(na_years))
+            df = df.dropna(subset=['year'])
+        
+        df['year'] = df['year'].astype(int)
 
         df_out = df.set_index('id')
 
