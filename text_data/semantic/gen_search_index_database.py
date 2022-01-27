@@ -13,6 +13,7 @@ load_dotenv()
 parser = argparse.ArgumentParser()
 parser.add_argument('-t', '--terms', nargs='+', default=[], help="search terms (e.g. \"carbon nanotube\") separated by spaces")
 parser.add_argument('-l', '--limit', type=float, default=1e10, help="Search limit (e.g. 1e5) will be converted to int")
+parser.add_argument('-p', '--purge', action='store_true', help="Search limit (e.g. 1e5) will be converted to int")
 
 
 db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
@@ -24,7 +25,7 @@ search_limit = int(args.limit)
 
 if not os.path.exists('data'): os.mkdir('data')
 fp_search_idxs = 'data/indexed_searches.json'
-if os.path.exists(fp_search_idxs):
+if os.path.exists(fp_search_idxs) and not args.purge:
     with open(fp_search_idxs, 'r') as f:
         id_dict = json.load(f)
 else:
