@@ -5,14 +5,20 @@ import json
 import sqlite3
 import os
 import matplotlib.pyplot as plt
+plt.rcParams.update({'font.size': 14})
 from dotenv import load_dotenv
 load_dotenv()
+
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('-t', '--term', type=str, default = '', help="search term (e.g. \"carbon nanotube\") generated from indexed search (if using indexed search dataset)")
+args = parser.parse_args()
 
 fp_search_idx = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/indexed_searches.json')
 with open(fp_search_idx, 'r') as f:
     id_dict = json.load(f)
 
-search_term = '%carbon nanotube%'
+search_term = '%{}%'.format(args.term)
 idxs = id_dict[search_term]
 
 db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
