@@ -8,8 +8,9 @@ import nlp_utils as nu
 from corex_pipeline import corex_pipeline
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-d', '--dataset', type=str, choices = ['search', 'cit_tree'], help="Which type of dataset to use (previously generated)")
+parser.add_argument('-d', '--dataset', type=str, choices = ['search', 'cit_tree'], default= 'search',help="Which type of dataset to use (previously generated)")
 parser.add_argument('-t', '--term', type=str, default = '', help="search term (e.g. \"carbon nanotube\") generated from indexed search (if using indexed search dataset)")
+parser.add_argument('-n', '--n_topics', type=int, default = 20, help="Number of topics")
 parser.add_argument('-tw', '--remove-top-words', action='store_true', help="Use general literature data stopwords")
 
 args = parser.parse_args()
@@ -56,8 +57,9 @@ print("Corex Topic Modeling")
 
 corex_anchors = []
 fixed_bigrams = nu.corex_utils.anchors_to_fixed_bigrams(corex_anchors)
+n_hidden = args.n_topics
 
-topic_model = corex_pipeline(docs, stopwords, corex_anchors, fixed_bigrams)
+topic_model = corex_pipeline(docs, stopwords, corex_anchors, fixed_bigrams, n_hidden)
 
 topic_model.dataset_description = dataset_description
 
