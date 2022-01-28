@@ -1,3 +1,7 @@
+rm temp_gz/*
+rm output/soc.db
+
+
 mkdir temp_gz
 wget https://s3-us-west-2.amazonaws.com/ai2-s2-research-public/open-corpus/2022-01-01/manifest.txt -O manifest.txt
 
@@ -6,7 +10,7 @@ LINES=$(cat $FILENAME)
 
 #https://codefather.tech/blog/bash-loop-through-lines-file/
 COUNTER=0
-MAX_FILES=5
+MAX_FILES=200
 for LINE in $LINES
 do
     if [ $COUNTER -eq $MAX_FILES ]; then
@@ -17,6 +21,10 @@ do
     out="temp_gz/$LINE"
 
     wget $url -O $out
+
+    python decompress_gz_and_filter.py
+
+    rm $out
 
     COUNTER=$((COUNTER+1))
 done

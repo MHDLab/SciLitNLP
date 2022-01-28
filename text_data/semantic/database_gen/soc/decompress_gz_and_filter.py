@@ -11,29 +11,34 @@ from tqdm import tqdm
 import sqlite3
 
 #Output sqlite database path 
-if not os.path.exists('output'): os.mkdir('output')
-if os.path.exists('output/soc.db'): 
-    print("Removing existing database...")
-    os.remove('output/soc.db')
-con = sqlite3.connect('output/soc.db')
+# output_folder = r'/media/lee/Shared Storage/full'
+output_folder = 'output'
+
+if not os.path.exists('ouput_folder'): os.mkdir('ouput_folder')
+
+# if os.path.exists('output/soc.db'): 
+#     print("Removing existing database...")
+#     os.remove('output/soc.db')
+
+con = sqlite3.connect(os.path.join(output_folder, 'soc.db'))
 
 #Temporary folder withfor downloaded .gz files
 gz_folder = 'temp_gz'
 
 #The semantic scholar dataset contains topic classificaitons from Microsoft Academic. The datset can be downselected to relevant topics.
 # See the relative number of each paper here https://github.com/allenai/s2orc
-mag_keep = [
-    # 'Biology',
-    'Chemistry',
-    'Computer Science',
-    'Engineering',
-    'Physics',
-    'Materials Science',
-    'Mathematics',
-    'Economics',
-    'Geology',
-    'Environmental Science',
-]
+# mag_keep = [
+#     # 'Biology',
+#     'Chemistry',
+#     'Computer Science',
+#     'Engineering',
+#     'Physics',
+#     'Materials Science',
+#     'Mathematics',
+#     'Economics',
+#     'Geology',
+#     'Environmental Science',
+# ]
 
 
 parse_files = [f for f in os.listdir(gz_folder) if '.gz' in f]
@@ -59,13 +64,17 @@ for metadata_file in parse_files:
             if len(metadata_dict['paperAbstract']) == 0:
                 continue
 
-            mag_field_of_study = metadata_dict['fieldsOfStudy']
+            # mag_field_of_study = metadata_dict['fieldsOfStudy']
 
-            if mag_field_of_study:
-                any_match = any(key in mag_field_of_study for key in mag_keep)
+            # if mag_field_of_study:
+            #     any_match = any(key in mag_field_of_study for key in mag_keep)
 
-                if any_match:
-                    ds.append(metadata_dict)
+            #     if any_match:
+            #         ds.append(metadata_dict)
+
+
+            ds.append(metadata_dict)
+
 
         df = pd.DataFrame(ds)
         df = df.where(df['paperAbstract'].isnull() == False).dropna(how='all') #Think this is already covered above now.
