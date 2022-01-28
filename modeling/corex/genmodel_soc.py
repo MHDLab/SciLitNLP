@@ -15,6 +15,9 @@ parser.add_argument('-tw', '--remove-top-words', action='store_true', help="Use 
 
 args = parser.parse_args()
 
+model_dict = vars(args)
+model_dict['model_type'] = 'CorEx'
+
 if args.remove_top_words:
     print("using general literature stopwords")
     fp_general_lit_tw = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/general_lit_top_words.csv')
@@ -33,7 +36,6 @@ if args.dataset == 'cit_tree':
     G = nx.read_gexf(os.path.join(graph_data_folder, 'G_cit_tree.gexf'))
     df_tm = nu.fileio.load_df_semantic(con, G.nodes)
 
-    dataset_description = "Citation tree generated from the Semantic Scholar Academic Graph"
 elif args.dataset == 'search':
 
     fp_search_idx = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/indexed_searches.json')
@@ -47,9 +49,11 @@ elif args.dataset == 'search':
     idxs = id_dict[search_term]
     df_tm = nu.fileio.load_df_semantic(con, idxs)
 
-    dataset_description = "Papers in the Semantic Scholar Academic Graph containing the term {} in the paper or abstract"
+
 else:
     raise ValueError("Didn't get valid dataset type ") # Shouldn't happen with choices in parseargs...
+
+model_dict['n_papers'] = len(df_tm)
 
 docs = df_tm['title'] + ' ' + df_tm['paperAbstract']
 
@@ -61,7 +65,7 @@ n_hidden = args.n_topics
 
 topic_model = corex_pipeline(docs, stopwords, corex_anchors, fixed_bigrams, n_hidden)
 
-topic_model.dataset_description = dataset_description
+topic_model.pipeline_settings = model_dict
 
 import _pickle as cPickle
 #Save model

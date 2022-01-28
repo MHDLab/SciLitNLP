@@ -57,6 +57,9 @@ df_edgekeywords.to_csv(os.path.join('data','edge_keywords.csv'))#Generate graph 
 s_anchor = nu.corex_utils.get_s_topic_words(topic_model)
 da_sigma, da_doc_topic = nu.corex_utils.calc_cov_corex(topic_model, s_anchor.index, topic_model.docs.values)
 #%%
+import json
+with open('data/pipeline_settings.json', 'w') as f:
+    json.dump(topic_model.pipeline_settings, f)
 
 from pipeline_data_prep import pipeline_data_prep
 pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_probs, da_sigma, min_edge_weight = args.min_edge_weight)
