@@ -1,0 +1,213 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 5;
+  border: 0;
+  font-size: 100%;
+  /* font: inherit;
+  vertical-align: baseline; */
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  display: block;
+  width: 90%;
+  margin: 1% auto;
+  padding: 1%;
+  background-color: #8CC286;
+  color: white;
+  border: 5px solid #8CC286;
+  border-radius: 5px;
+}
+
+section:before,
+section:after {
+  display: table;
+}
+
+section:after{
+  clear:both;
+}
+section {
+  clear: both;
+}
+
+section {  
+  width: 90%;
+  margin: 0 auto;
+  padding: 1%;
+}
+
+.photo {
+  display: inline-block;
+  width: 20%;
+}
+
+.description {
+  display: inline-block;
+  width: 75%;
+  height: 100%;
+  margin: auto;
+  float: right;
+  padding: 1%;
+  border: 5px solid #8CC286;
+  border-radius: 5px;
+  vertical-align: top;
+}
+
+.center_fig {
+  display: block;
+  width: 50%;
+  margin: auto;
+  border: 5px solid #8CC286;
+  padding: 1%;
+}
+
+html {
+  font-family: 'Montserrat', 'Verenda', Arial, sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 55px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.fieldname{
+  font-weight: 500;
+}
+
+/* .bolded{
+  font-weight: 400;
+} */
+
+.emp {
+  font-style: italic;
+}
+
+.sub {
+  vertical-align: sub;
+  font-size: smaller;
+  font-weight: 400;
+}
+
+.gitlink {
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #8CC286;
+ }
+
+.gitlink:link, .gitlink:visited {
+  font-size: 30px;
+}
+
+.gitlink:hover, .gitlink:active{
+  font-size: 35px;
+  color: #6DA367;
+}
+
+.outlink {
+  display: inline-block;
+  text-decoration: none;
+  color: #6DA367;
+  font-weight: 500;
+ }
+
+
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+}
+
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+.collapsible:after {
+  content: '\02795'; 
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+.extended {
+  padding: 5 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+} 

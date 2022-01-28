@@ -90,22 +90,11 @@ from bokeh.plotting import figure, show, from_networkx, save
 from bokeh.palettes import Colorblind3, Colorblind4, Colorblind5, Colorblind6, Colorblind7
 from bokeh.layouts import column, row, layout
 
-intro_text = Div(text="""
-<h2> Graph Key: </h2>
-<h3> Each node represents a topic and each edge between two topics represents the likelihood of the two topics appearing in an abstract together.<br>
-<b>NODE COLOR:</b> community assigned by the Louvain community detection algorithm.<br>
-<b>NODE SIZE:</b> overall probability of the topic appearing in abstracts.<br>
-<b>NODE OPACITY:</b> probability of the topic appearing in abstracts over the past 5 years (brighter = higher probability).<br>
-<b>EDGE THICKNESS:</b> probability of two topics occurring in the same abstract.<br>
-(Note, graph projection is designed to make it easier to see connections between nodes.  The axes do not communicate additional information.)<br><br>
-You can select different topics to pull up additional information including the probability of abstracts containing topics over time and papers with the highest probability of containing the selected topic.<br>
-Click on a topic to view further information, or select two topic nodes to view information about their relationship.</h3>
-""", width=1200)
-trend_text = Div(text="""<h3>The Topic Probability Trend shows the probability of an abstract from the corpus containing the selected topic during a give year.</h3>""")
+intro_text = Div(text="""""")
+trend_text = Div(text="""<h3>The Topic Probability Trend shows the probability of finding the selected topic over time. The probability is calculated for each year by summing the given topic's probability over each paper, then normalizing so the sum of all topic probabilites for that year is 1.</h3>""")
 group_text = Div(text="""<h3>The graph below uses the same data from the graph above, but merges nodes from the same Louvain community.</h3>""")
-table_text = Div(text="""<br><br><br><br><h3>The table below shows the topics, their keywords, their probabilities, and their Louvain communities.<br>
-They are grouped by community</h3>""", height=150)
-
+table_text = Div(text="""<h3>The table below shows the topics, their keywords, their probabilities, and their Louvain communities.<br>
+They are grouped by community</h3>""")
 source_topics_year = ColumnDataSource(df_topic_year)
 
 #pallet dictionary
@@ -129,7 +118,7 @@ pal = pal_dict[len(set(partition.values()))]
 fill_colors = [pal[i] for i in partition.values()]
 # fill_colors = change_intensity(fill_colors, recent_prob)
 #generate the plot
-plot = figure(plot_width=1200, plot_height=850,
+plot = figure(plot_width=1000, plot_height=750,
             x_range=Range1d(-1.1, 1.1), y_range=Range1d(-1.1, 1.1))
 #add a hover tool for nodes
 node_hover_tool = HoverTool(tooltips=[("index", "@index"), ("text", "@disp_text")])
@@ -186,6 +175,7 @@ topic_part = pd.Series(list(partition.values()), index= G.nodes)
 # keep track of whatever the most recently selected node was
 prev_id = ColumnDataSource(data={'prev': [-1]})
 
+n_keywords = 10
 # callback args is a dictionary of variables that are used into the javascript callback
 callback_args = dict(
     source_trend = source_trend,
@@ -198,8 +188,8 @@ callback_args = dict(
     top_papers_topic_2 = top_papers_topic_2,
     text_top_papers_6_10=text_top_papers_6_10,
     top_papers_6_10_2 = top_papers_6_10_2,
-    topic_keywords=df_topickeywords[df_topickeywords.columns[0:6]].apply(", ".join, axis= 1)[present_topics],
-    edge_keywords=df_edgekeywords[df_edgekeywords.columns[0:6]].apply(", ".join, axis= 1)[present_edges],
+    topic_keywords=df_topickeywords[df_topickeywords.columns[0:n_keywords]].apply(", ".join, axis= 1)[present_topics],
+    edge_keywords=df_edgekeywords[df_edgekeywords.columns[0:n_keywords]].apply(", ".join, axis= 1)[present_edges],
     edge_list = present_edges,
     top_papers_edge = top_papers_edge,
     edge_papers_6_10 = edge_papers_6_10,
@@ -431,7 +421,7 @@ columns = [
 
 data_table = DataTable(source=table_source,
                        columns=columns,
-                       width = 800,
+                       width = 1000,
                        fit_columns=False
 )
 

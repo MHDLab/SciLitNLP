@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Topic Modeling Report ('{{ term }}')</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>
+    Topic Modeling Report ('{{ term }}')
+  </h1>
+</header>
+
+<section class="proj">
+<p>
+This page is a programatically generated report of the results of topic modeling algorithms on a collection of scientific literature. Expand the sections below for more information. The code can be found on <a href=https://github.com/MHDLab/SciLitNLP>GitHub</a>
+</p>
+
+<button type="button" class="collapsible"> <u>Dataset:</u> <b>{{ n_papers }}</b> papers that were found in the Semantic Scholar Open Research Corpus containing the term <b>'{{ term }}'</b> in the abstract or title</button>
+    <div class="extended">
+        <p>
+            The dataset used in this work is the <a href=https://api.semanticscholar.org/corpus>Semantic Scholar Open Research Corpus</a>.
+            The full dataset includes the paper metadata (title, abstract, citation info, etc. ) for over 25 million papers stored locally in a ~100 Gb sqlite database. Topic modeling is performed on a subset of this data that is obtained by finding papers that have the (case-insensitive) search term <b>'{{ term }}'</b> in the title or abstract.
+            <!-- The dataset includes topic tags created by the now-defunct Microsoft Academic, and for the moment the dataset is first downselected to not include papers solely categorized as 'Medicine' (as they make up a large fraction of all research papers) -->
+        </p>
+
+        <center>
+          <figure>
+            <img src="img/full_corpus_pub_annual.png" width = 500></img>
+            <img src="img/search_term_pub_percent.png" width = 500></img>
+            <figcaption style="text-align: center;font-style: italic;">Left: The number of all annual publications in the left) full Semantic Scholar Open Research Corpus database and right) The percentage of papers containing term <b>'{{ term }}'</b> in the title or abstract.</figcaption>
+          </figure>
+        </center>
+    </div>
+
+<button type="button" class="collapsible"> <u>Topic Modeling:</u> a <b>{{ model_type }}</b> topic model created with <b>{{ n_topics }}</b> topics </button>
+    <div class="extended">
+
+        <p>
+            Topic modeling refers to machine learning algorithms that find collections of words that describe a corpus (collection of documents). 
+            The topic modeling is performed with either a <a href=https://github.com/gregversteeg/corex_topic>Correlation Explanation (CorEx) topic model</a> or a <a href=https://radimrehurek.com/gensim/models/ldamodel.html>Gensim Latent Dirichlet Allocaiton (LDA)</a> topic model. 
+        </p>
+
+        <center>
+          <figure>
+            <img src="img/topic_modeling_schematic.png" width = 500 caption='test'></img>
+            <figcaption style="text-align: center;font-style: italic;">A schematic of a general topic modeling agorithm where each word and document has some probability of being associated with a topic. One caveat is that for CorEx topic models, each word only belongs to one topic. </figcaption>
+          </figure>
+        </center>
+    </div>
+</section>
+
+
+
+<section class="proj">
+
+  <h2> Interactive Topic Model Plot  </h2>
+  <p>The nodes of the network represent the topics of the topic model. Click them for more information. </p>
+
+  <button type="button" class="collapsible"> Expand for plot description and instructions</button>
+      <div class="extended">
+        <p>
+        Each node represents a topic and each edge between two topics represents the likelihood of the two topics appearing in an abstract together.<br>
+        <b>NODE COLOR:</b> community assigned by the Louvain community detection algorithm.<br>
+        <b>NODE SIZE:</b> overall probability of the topic appearing in abstracts.<br>
+        <b>NODE OPACITY:</b> probability of the topic appearing in abstracts over the past 5 years (brighter = higher probability).<br>
+        <b>EDGE THICKNESS:</b> probability of two topics occurring in the same abstract.<br>
+        (Note, graph projection is designed to make it easier to see connections between nodes.  The axes do not communicate additional information.)<br><br>
+        You can select different topics to pull up additional information including the probability of abstracts containing topics over time and papers with the highest probability of containing the selected topic.<br>
+        Click on a topic to view further information, or select two topic nodes to view information about their relationship.
+        </p>
+      </div>
+
+
+  <embed type="text/html" src="topic_network.html" width=2000, height=2500> </embed>
+
+</section>
+
+
+
+
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+            console.log('hide');
+          } else {
+            content.style.display = "block";
+            console.log('display');
+          }
+        });
+      }
+    </script>
+</body>
+</html>
