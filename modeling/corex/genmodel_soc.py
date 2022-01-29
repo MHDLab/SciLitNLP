@@ -57,6 +57,19 @@ model_dict['n_papers'] = len(df_tm)
 
 docs = df_tm['title'] + ' ' + df_tm['paperAbstract']
 
+
+##Language Downselect TODO: add to nlp_utils
+import langdetect
+print("dropping languages other than english")
+print(" df size before: {} ".format(len(docs)))
+
+langs = docs.apply(langdetect.detect)
+docs = docs.where(langs == 'en').dropna()
+
+print(langs.value_counts())
+print(" df size after: {} ".format(len(docs)))
+
+#Topic modeling
 print("Corex Topic Modeling")
 
 corex_anchors = []
