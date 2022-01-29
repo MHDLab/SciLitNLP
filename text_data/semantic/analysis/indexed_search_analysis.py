@@ -14,7 +14,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-t', '--term', type=str, default = '', help="search term (e.g. \"carbon nanotube\") generated from indexed search (if using indexed search dataset)")
 args = parser.parse_args()
 
-fp_search_idx = os.path.join(os.getenv('REPO_DIR'), r'text_data/semantic/data/indexed_searches.json')
+fp_search_idx = os.path.join(os.getenv('REPO_DIR'), 'text_data/semantic/data/indexed_searches.json')
 with open(fp_search_idx, 'r') as f:
     id_dict = json.load(f)
 
