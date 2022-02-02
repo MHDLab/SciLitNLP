@@ -14,6 +14,12 @@ def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_pro
     top_topic_paper = df_doc_topic_probs.idxmax(axis=1)
     top_papers_6_10 = pd.Series(index= df_doc_topic_probs.columns)
 
+
+    has_citation_info = 'inCitations' in df.columns
+    if has_citation_info:
+        n_citations = df['inCitations'].str.split(',').apply(len)
+        n_citations_year  = n_citations/df['years_ago']
+
     for topic in df_doc_topic_probs.columns:
     #first part of string
         top_papers = df_doc_topic_probs[topic].sort_values(ascending=False)
@@ -26,7 +32,7 @@ def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_pro
             linkstr = df['title'][idx] + " (" + str(df['year'][idx]) + ")"
             text += " <a href=" + df['display_url'][idx] + ">" + linkstr + "</a><br>"
             text += " (topic prob: {:0.1f}%)".format(prob*100)
-        # text += " (# citations {:})".format(len(df['inCitations'][idx].split(',')))
+            if has_citation_info: text += " (citations/year {:0.1f})".format(n_citations_year[idx])
             text += " <br><br> "
     
         top_papers_topic[topic] = text
@@ -43,7 +49,7 @@ def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_pro
             linkstr = df['title'][idx] + " (" + str(df['year'][idx]) + ")"
             text += " <a href=" + df['display_url'][idx] + ">" + linkstr + "</a><br>"
             text += " (topic prob: {:0.1f}%)".format(prob*100)
-        # text += " (# citations {:})".format(len(df['inCitations'][idx].split(',')))
+            if has_citation_info: text += " (citations/year: {:0.1f})".format(n_citations_year[idx])
             text += " <br><br> "
 
     # top_papers_str = ", ".join(df['title'][top_papers.index])
@@ -71,7 +77,7 @@ def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_pro
             linkstr = df['title'][idx] + " (" + str(df['year'][idx]) + ")"
             text += " <a href=" + df['display_url'][idx] + ">" + linkstr + "</a><br>"
             text += " (topic prob: {:0.1f}%)".format(prob*100)
-        # text += " (# citations {:})".format(len(df['inCitations'][idx].split(',')))
+            if has_citation_info: text += " (citations/year {:0.1f})".format(n_citations_year[idx])
             text += "<br><br> "
     
         top_papers_edge[edge] = text
@@ -87,7 +93,7 @@ def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_pro
             linkstr = df['title'][idx] + " (" + str(df['year'][idx]) + ")"
             text += " <a href=" + df['display_url'][idx] + ">" + linkstr + "</a><br>"
             text += " (topic prob: {:0.1f}%)".format(prob*100)
-        # text += " (# citations {:})".format(len(df['inCitations'][idx].split(',')))
+            if has_citation_info: text += " (citations/year {:0.1f})".format(n_citations_year[idx])
             text += "<br><br> "
 
     # top_papers_str = ", ".join(df['title'][top_papers.index])
