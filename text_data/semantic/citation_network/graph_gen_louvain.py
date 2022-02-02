@@ -25,7 +25,7 @@ cursor = con.cursor()
 #TODO: this doesn't seem to work well with broad 
 
 # regex = '%energy storage%'
-# ids = nu.fileio.gen_ids_searchterm(con, regex, idx_name='id', search_fields=['paperAbstract', 'title'], search_limit=int(30e6), output_limit=30e6)
+# ids = nu.fileio.gen_ids_regex(con, regex, idx_name='id', search_fields=['paperAbstract', 'title'], search_limit=int(30e6), output_limit=30e6)
 # pd.Series(ids, name=regex.strip('%')).to_csv('data/indexed_search.csv')
 
 ids = pd.read_csv('data/indexed_search.csv', index_col=0)['energy storage']

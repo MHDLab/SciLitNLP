@@ -20,7 +20,7 @@ cursor = con.cursor()
 #%%
 
 # regex = '%energy storage%'
-# ids = nu.fileio.gen_ids_searchterm(con, regex, idx_name='id', search_fields=['paperAbstract', 'title'], search_limit=int(5e6), output_limit=3000)
+# ids = nu.fileio.gen_ids_regex(con, regex, idx_name='id', search_fields=['paperAbstract', 'title'], search_limit=int(5e6), output_limit=3000)
 
 
 ids = pd.read_csv('data/indexed_search.csv', index_col=0)['energy storage']

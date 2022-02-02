@@ -11,15 +11,14 @@ load_dotenv()
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('-t', '--term', type=str, default = '', help="search term (e.g. \"carbon nanotube\") generated from indexed search (if using indexed search dataset)")
+parser.add_argument('-r', '--regex', type=str, default = '', help="regular expression generated from indexed search (if using indexed search id generation)")
 args = parser.parse_args()
 
 fp_search_idx = os.path.join(os.getenv('REPO_DIR'), 'text_data/semantic/data/indexed_searches.json')
 with open(fp_search_idx, 'r') as f:
     id_dict = json.load(f)
 
-search_term = '%{}%'.format(args.term)
-idxs = id_dict[search_term]
+idxs = id_dict[args.regex]
 
 db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
 con = sqlite3.connect(db_path)
@@ -44,10 +43,10 @@ year_counts.index
 plt.figure(2)
 ratio = year_counts_es.divide(year_counts).dropna()
 (ratio.loc[YEAR_RANGE]/1e-2).plot(marker='o')
-plt.ylim(0,1)
+# plt.ylim(0,1)
 plt.xlabel('Year')
 
-plt.suptitle('Abstract or Title Contains \'{}\''.format(search_term.strip('%')))
+plt.suptitle('Abstract or Title Contains \'{}\''.format(args.regex))
 plt.ylabel('% Annual Publications')
 plt.savefig('output/search_term_pub_percent.png', facecolor='white')
 # %%

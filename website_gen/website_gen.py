@@ -15,7 +15,11 @@ topic_network_folder = os.path.join(repo_path, 'visualization/topic_network')
 with open(os.path.join(topic_network_folder, 'data','pipeline_settings.json'), 'r') as f:
    pipeline_settings = json.load(f)
 
-website_name = pipeline_settings['term'].replace(' ', '_')
+regex = pipeline_settings['regex']
+
+website_name = regex.replace(' ', '_')
+website_name = "".join(x for x in website_name if x.isalnum() or x == '_') #Some disallowed things from a regex in folder/filenames
+
 website_dir = 'websites/{}'.format(website_name)
 if not os.path.exists(website_dir):
     os.mkdir(website_dir)

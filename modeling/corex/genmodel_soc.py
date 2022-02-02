@@ -9,7 +9,7 @@ from corex_pipeline import corex_pipeline
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--dataset', type=str, choices = ['search', 'cit_tree'], default= 'search',help="Which type of dataset to use (previously generated)")
-parser.add_argument('-t', '--term', type=str, default = '', help="search term (e.g. \"carbon nanotube\") generated from indexed search (if using indexed search dataset)")
+parser.add_argument('-r', '--regex', type=str, default = '', help="regular expression generated from indexed search (if using indexed search id generation)")
 parser.add_argument('-n', '--n_topics', type=int, default = 20, help="Number of topics")
 parser.add_argument('-tw', '--remove-top-words', action='store_true', help="Use general literature data stopwords")
 
@@ -42,11 +42,10 @@ elif args.dataset == 'search':
     with open(fp_search_idx, 'r') as f:
         id_dict = json.load(f)
 
-    search_term = '%{}%'.format(args.term)
-    if not search_term in id_dict:
-        raise ValueError("Search term {} not found in indexed searches".format(args.term))
+    if not args.regex in id_dict:
+        raise ValueError("Search term {} not found in indexed searches".format(args.regex))
 
-    idxs = id_dict[search_term]
+    idxs = id_dict[args.regex]
     df_tm = nu.fileio.load_df_semantic(con, idxs)
 
 

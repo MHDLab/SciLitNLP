@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Topic Modeling Report ('{{ term }}')</title>
+    <title>Topic Modeling Report ('{{ regex }}')</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -10,7 +10,7 @@
 
 <header>
   <h1>
-    Topic Modeling Report ('{{ term }}')
+    Topic Modeling Report ('{{ regex }}')
   </h1>
 </header>
 
@@ -19,11 +19,11 @@
 This page is a programatically generated report of the results of topic modeling algorithms on a collection of scientific literature. Expand the sections below for more information. The code can be found on <a href=https://github.com/MHDLab/SciLitNLP>GitHub</a>
 </p>
 
-<button type="button" class="collapsible"> <u>Dataset:</u> <b>{{ n_papers }}</b> papers that were found in the Semantic Scholar Open Research Corpus containing the term <b>'{{ term }}'</b> in the abstract or title</button>
+<button type="button" class="collapsible"> <u>Dataset:</u> <b>{{ n_papers }}</b> papers that were found in the Semantic Scholar Open Research Corpus containing the regular expression <b>'{{ regex }}'</b> in the abstract or title</button>
     <div class="extended">
         <p>
             The dataset used in this work is the <a href=https://api.semanticscholar.org/corpus>Semantic Scholar Open Research Corpus</a>.
-            The full dataset includes the paper metadata (title, abstract, citation info, etc. ) for over 25 million papers stored locally in a ~100 Gb sqlite database. Topic modeling is performed on a subset of this data that is obtained by finding papers that have the (case-insensitive) search term <b>'{{ term }}'</b> in the title or abstract.
+            The full dataset includes the paper metadata (title, abstract, citation info, etc. ) for over 25 million papers stored locally in a ~100 Gb sqlite database. Topic modeling is performed on a subset of this data that is obtained by finding papers that contain the regular expression <b>'{{ regex }}'</b> in the title or abstract.
             <!-- The dataset includes topic tags created by the now-defunct Microsoft Academic, and for the moment the dataset is first downselected to not include papers solely categorized as 'Medicine' (as they make up a large fraction of all research papers) -->
         </p>
 
@@ -31,7 +31,7 @@ This page is a programatically generated report of the results of topic modeling
           <figure>
             <img src="img/full_corpus_pub_annual.png" width = 500></img>
             <img src="img/search_term_pub_percent.png" width = 500></img>
-            <figcaption style="text-align: center;font-style: italic;">Left: The number of all annual publications in the left) full Semantic Scholar Open Research Corpus database and right) The percentage of papers containing term <b>'{{ term }}'</b> in the title or abstract.</figcaption>
+            <figcaption style="text-align: center;font-style: italic;">Left: The number of all annual publications in the left) full Semantic Scholar Open Research Corpus database and right) The percentage of papers containing regular expression <b>'{{ regex }}'</b> in the title or abstract.</figcaption>
           </figure>
         </center>
     </div>
@@ -63,14 +63,20 @@ This page is a programatically generated report of the results of topic modeling
   <button type="button" class="collapsible"> Expand for plot description and instructions</button>
       <div class="extended">
         <p>
-        Each node represents a topic and each edge between two topics represents the likelihood of the two topics appearing in an abstract together.<br>
+        Each node represents a topic and each edge between two topics represents the likelihood of the two topics appearing in an abstract together.
+        The graph projection is designed to make it easier to see connections between nodes.  The axes do not communicate additional information
+        <br>
+        <br>
         <b>NODE COLOR:</b> community assigned by the Louvain community detection algorithm.<br>
         <b>NODE SIZE:</b> overall probability of the topic appearing in abstracts.<br>
         <b>NODE OPACITY:</b> probability of the topic appearing in abstracts over the past 5 years (brighter = higher probability).<br>
         <b>EDGE THICKNESS:</b> probability of two topics occurring in the same abstract.<br>
-        (Note, graph projection is designed to make it easier to see connections between nodes.  The axes do not communicate additional information.)<br><br>
-        You can select different topics to pull up additional information including the probability of abstracts containing topics over time and papers with the highest probability of containing the selected topic.<br>
-        Click on a topic to view further information, or select two topic nodes to view information about their relationship.
+        </p>
+        <ul>
+          <li>Click on a topic to view information including the probability of abstracts containing topics over time and papers with the highest probability of containing the selected topic.</li>
+          <li>Click in the blank area to reset the selection to nothing</li>
+          <li>With one topic selected, select another connected node to view the papers and words with the highest probabilities in both topics. Note that the words in CorEx topic models belong to only one topic, so there is no implemented method of finding the words associated with both topics. </li>
+        </ul>
         </p>
       </div>
 

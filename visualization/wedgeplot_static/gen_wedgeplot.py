@@ -13,7 +13,7 @@ from nlp_utils import fileio
 # db_folder = r'E:\\'
 # con = sqlite3.connect(os.path.join(db_folder, 'soc.db'))
 # regex = '%energy storage%'
-# ids = fileio.gen_ids_searchterm(con, regex, idx_name='id', search_fields=['paperAbstract', 'title'], search_limit=int(1e6), output_limit=int(3e4))
+# ids = fileio.gen_ids_regex(con, regex, idx_name='id', search_fields=['paperAbstract', 'title'], search_limit=int(1e6), output_limit=int(3e4))
 # df = fileio.load_df_semantic(con, ids)
 
 db_folder = r'C:\Users\aspit\National Energy Technology Laboratory\MHD Lab - Documents\Publications\SEAMs'
