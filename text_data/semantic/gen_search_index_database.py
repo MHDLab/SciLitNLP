@@ -25,7 +25,6 @@ regex = args.regex
 search_limit = int(args.search_limit)
 output_limit = int(args.output_limit)
 
-regex = "\\b" + regex + "\\b" #Assume that we want word boundaries (look for the regex anywhere, I think)
 
 if not os.path.exists('data'): os.mkdir('data')
 fp_search_idxs = 'data/indexed_searches.json'
@@ -46,12 +45,6 @@ ids = nu.fileio.gen_ids_regex(
     output_limit=output_limit
 )
 # all_ids.append(ids)
-
-#Remove the word boundaries for the json dictionary. #TODO: some package (I think tmtoolkit) was causing issues being able to use pyhton 3.9, which would simplify this
-remove_str = "\\b"
-# regex = regex[len(remove_str):]
-# regex = regex[:len(remove_str)]
-regex = regex.strip(remove_str)
 
 id_dict[regex] = ids
 
