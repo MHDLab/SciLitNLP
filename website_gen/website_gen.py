@@ -2,8 +2,13 @@ import os
 import sys
 import shutil
 import json
+import argparse
 from dotenv import load_dotenv
 load_dotenv()
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-ln', '--long-name', type=str, default='', help="Full name to display in website header")
+args = parser.parse_args()
 
 if not os.path.exists('websites'): os.mkdir('websites')
 
@@ -20,9 +25,13 @@ regex = pipeline_settings['regex']
 website_name = regex.replace(' ', '_')
 website_name = "".join(x for x in website_name if x.isalnum() or x == '_') #Some disallowed things from a regex in folder/filenames
 
-website_dir = 'websites/{}'.format(website_name)
+pipeline_settings['long_name'] = website_name if args.long_name == '' else args.long_name
+
+website_dir = 'websites'
 if not os.path.exists(website_dir):
     os.mkdir(website_dir)
+
+if not os.path.exists(os.path.join(website_dir, website_name)):
     os.mkdir(os.path.join(website_dir, website_name))
 
 shutil.copyfile('main.css', os.path.join(website_dir, website_name, 'main.css'))
