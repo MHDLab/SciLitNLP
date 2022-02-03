@@ -117,16 +117,25 @@ pal = pal_dict[len(set(partition.values()))]
 #calculate the colors based on partition (Louvian community) and recent probability
 fill_colors = [pal[i] for i in partition.values()]
 # fill_colors = change_intensity(fill_colors, recent_prob)
+
+#Generate the graph renerer, the positons will be used to set the scale axes
+graph_renderer = from_networkx(G, nx.spring_layout, scale=1, center=(0, 0))
+node_position_dict = graph_renderer.layout_provider.graph_layout
+xs = [node_position_dict[topic][0] for topic in node_position_dict]
+ys = [node_position_dict[topic][1] for topic in node_position_dict]
+
 #generate the plot
 plot = figure(plot_width=1000, plot_height=750,
-            x_range=Range1d(-1.1, 1.1), y_range=Range1d(-1.1, 1.1))
+            x_range=Range1d(min(xs)*1.2, max(xs)*1.2), y_range=Range1d(min(ys)*1.2, max(ys)*1.2))
 #add a hover tool for nodes
 node_hover_tool = HoverTool(tooltips=[("index", "@index"), ("text", "@disp_text")])
 plot.add_tools(node_hover_tool,TapTool())
-plot.axis.visible = False
 
-#render the graph
-graph_renderer = from_networkx(G, nx.spring_layout, scale=1, center=(0, 0))
+#Remove tick marks and grid
+plot.axis.visible = False
+plot.xgrid.visible = False
+plot.ygrid.visible = False
+
 
 #add node data to the source data
 source_graph = graph_renderer.node_renderer.data_source
