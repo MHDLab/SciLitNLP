@@ -58,13 +58,13 @@ df_topickeywords = pd.read_csv(os.path.join(data_folder, 'topic_keywords.csv'), 
 df_topic_year = pd.read_csv(os.path.join(data_folder, 'topic_year.csv'), index_col=0)[present_topics]
 
 df_topic_year = df_topic_year.loc[:2020]
-top_papers_topic = pd.read_csv(os.path.join(data_folder, 'top_papers_topic.csv'), index_col=0, squeeze=True)[present_topics]
-top_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'top_papers_6_10.csv'), index_col=0, squeeze=True)[present_topics]
+top_papers_topic = pd.read_csv(os.path.join(data_folder, 'top_papers_topic.csv'), index_col=0).squeeze("columns")[present_topics]
+top_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'top_papers_6_10.csv'), index_col=0).squeeze("columns")[present_topics]
 
 #Reduce edges to those present in graph
 df_edgekeywords = pd.read_csv(os.path.join(data_folder, 'edge_keywords.csv'), index_col=0).loc[present_edges]
-top_papers_edge = pd.read_csv(os.path.join(data_folder, 'top_papers_edge.csv'), index_col=0, squeeze=True)[present_edges]
-edge_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'edge_papers_6_10.csv'), index_col=0, squeeze=True)[present_edges]
+top_papers_edge = pd.read_csv(os.path.join(data_folder, 'top_papers_edge.csv'), index_col=0).squeeze("columns")[present_edges]
+edge_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'edge_papers_6_10.csv'), index_col=0).squeeze("columns")[present_edges]
 
 #calculate the probability over the past 5 years of dataset
 last_5_years = df_topic_year.index[-5:]

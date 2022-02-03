@@ -10,9 +10,9 @@ def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_pro
     df_topicsyear.to_csv(os.path.join('data','topic_year.csv'))
 
 
-    top_papers_topic = pd.Series(index= df_doc_topic_probs.columns)
+    top_papers_topic = pd.Series(index= df_doc_topic_probs.columns, dtype=str)
     top_topic_paper = df_doc_topic_probs.idxmax(axis=1)
-    top_papers_6_10 = pd.Series(index= df_doc_topic_probs.columns)
+    top_papers_6_10 = pd.Series(index= df_doc_topic_probs.columns, dtype=str)
 
 
     has_citation_info = 'inCitations' in df.columns
@@ -61,9 +61,9 @@ def pipeline_data_prep(df, df_topickeywords, df_doc_topic_probs, df_doc_edge_pro
     top_papers_6_10.to_csv(os.path.join('data','top_papers_6_10.csv'))
 
 
-    top_papers_edge= pd.Series(index= df_doc_edge_probs.columns)
+    top_papers_edge= pd.Series(index= df_doc_edge_probs.columns, dtype=str)
     top_edge_paper = df_doc_edge_probs.idxmax(axis=1)
-    edge_papers_6_10 = pd.Series(index= df_doc_edge_probs.columns)
+    edge_papers_6_10 = pd.Series(index= df_doc_edge_probs.columns, dtype=str)
 
     loop_control = 0
     for edge in df_doc_edge_probs.columns:
