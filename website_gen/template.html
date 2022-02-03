@@ -50,6 +50,21 @@ This page is a programatically generated report of the results of topic modeling
             <figcaption style="text-align: center;font-style: italic;">A schematic of a general topic modeling agorithm where each word and document has some probability of being associated with a topic. One caveat is that for CorEx topic models, each word only belongs to one topic. </figcaption>
           </figure>
         </center>
+
+        <p>
+          Below is a plot of some different topics extracted from the corpus and their relative probabilities over time. The most probable words of the topic are shown above each figure. These words showcase the text processing that combines different variations on a word (i.e. strategy, strategic) into one root 'stem'. 
+          The probability is calculated for each year by summing the given topic's probability over each paper, then normalizing so the sum of all topic probabilites for that year is 1.
+        </p>
+        <center>
+          <figure>
+            <img src="img/top_slopes_plot.png" width = 1500></img>
+            <figcaption style="text-align: center;font-style: italic;"> The topics sorted by the largest positive slope in the last five years. i.e. trending</figcaption>
+          </figure>
+          <figure>
+            <img src="img/neg_slopes_plot.png" width = 1500></img>
+            <figcaption style="text-align: center;font-style: italic;"> The topics sorted by the largest negative slope in the last five years. </figcaption>
+          </figure>
+        </center>
     </div>
 </section>
 

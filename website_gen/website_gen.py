@@ -51,6 +51,17 @@ for fn in fns:
         os.path.join(img_dir, fn),
     )
 
+## topic trends plots
+topic_trends_folder = os.path.join(repo_path, 'visualization/topic_trends')
+
+fns = ['top_slopes_plot.png', 'neg_slopes_plot.png']
+for fn in fns:
+    shutil.copyfile(
+        os.path.join(topic_trends_folder, 'output', fn),
+        os.path.join(img_dir, fn),
+    )
+
+
 
 from jinja2 import Template
 
