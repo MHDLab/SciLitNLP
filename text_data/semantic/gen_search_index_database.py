@@ -12,8 +12,9 @@ load_dotenv()
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-r', '--regex', type=str, help="search python regex that the search fields contain eg. \"carbon nanotube\" or \"oxygen (evolution|reduction)\", Note that \\b (word boundaries) are added to the prefix and and suffix of the regex")
-parser.add_argument('-l', '--limit', type=float, default=1e10, help="Search limit (e.g. 1e5) will be converted to int")
-parser.add_argument('-p', '--purge', action='store_true', help="Search limit (e.g. 1e5) will be converted to int")
+parser.add_argument('-sl', '--search-limit', type=float, default=0, help="Search limit (e.g. 1e5) will be converted to int. 0 for no limit.")
+parser.add_argument('-ol', '--output-limit', type=float, default=0, help="Output limit (e.g. 1e5) will be converted to int. 0 for no limit.")
+parser.add_argument('-p', '--purge', action='store_true', help="delete all existing searches")
 
 
 db_path = os.path.join(os.getenv('DB_FOLDER'), 'soc.db')
@@ -21,7 +22,8 @@ con = sqlite3.connect(db_path)
 
 args = parser.parse_args()
 regex = args.regex
-search_limit = int(args.limit)
+search_limit = int(args.search_limit)
+output_limit = int(args.output_limit)
 
 regex = "\\b" + regex + "\\b" #Assume that we want word boundaries (look for the regex anywhere, I think)
 
@@ -41,7 +43,7 @@ ids = nu.fileio.gen_ids_regex(
     idx_name='id', 
     search_fields=['paperAbstract', 'title'], 
     search_limit=search_limit, 
-    output_limit=1e10
+    output_limit=output_limit
 )
 # all_ids.append(ids)
 
