@@ -46,6 +46,23 @@ ids = nu.fileio.gen_ids_regex(
 )
 # all_ids.append(ids)
 
+
+
+#Downselect based on paper being english
+import langdetect
+print("dropping languages other than english")
+
+df = nu.fileio.load_df_semantic(con, ids)
+docs = df['title'] + ' ' + df['paperAbstract']
+
+langs = docs.apply(langdetect.detect)
+docs = docs.where(langs == 'en').dropna()
+
+print(langs.value_counts())
+print(" df size after: {} ".format(len(docs)))
+
+ids = docs.index.tolist()
+
 id_dict[regex] = ids
 
 with open(fp_search_idxs, 'w') as f:
