@@ -32,7 +32,30 @@ args = parser.parse_args()
 #load graph
 G = nx.read_gexf(os.path.join(data_folder,'G_topic.gexf'))
 
+#Reduce topic index/columns to those present in the network 
+present_topics = list(G.nodes)
+df_topickeywords = pd.read_csv(os.path.join(data_folder, 'topic_keywords.csv'), index_col=0).loc[present_topics]
 
+#TODO: It appears that the corex model can return topics with missing or even no words. I'm not sure why but this is suddenly a problem. For now I am just removing those topics from the data and graph.
+# Note that originally the 'present_topics' were created because some edges were dropped with min-edge-weight in prep data, but setting it to 1 (as it was recently) the problem still arises. So something in recent commits must have changed somehting. 
+df_topickeywords = df_topickeywords.replace('None','').dropna().astype(str)
+missing_topics = [topic for topic in present_topics if topic not in df_topickeywords.index]
+present_topics = [topic for topic in present_topics if topic in df_topickeywords.index]
+
+for topic in missing_topics:
+    G.remove_node(topic)
+
+df_topic_year = pd.read_csv(os.path.join(data_folder, 'topic_year.csv'), index_col=0)[present_topics]
+df_topic_year = df_topic_year.loc[:2020]
+
+top_papers_topic = pd.read_csv(os.path.join(data_folder, 'top_papers_topic.csv'), index_col=0).squeeze("columns")[present_topics]
+top_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'top_papers_6_10.csv'), index_col=0).squeeze("columns")[present_topics]
+
+#Reduce edges to those present in graph
+present_edges = list(e[0]+', '+e[1] for e in G.edges)
+df_edgekeywords = pd.read_csv(os.path.join(data_folder, 'edge_keywords.csv'), index_col=0).loc[present_edges]
+top_papers_edge = pd.read_csv(os.path.join(data_folder, 'top_papers_edge.csv'), index_col=0).squeeze("columns")[present_edges]
+edge_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'edge_papers_6_10.csv'), index_col=0).squeeze("columns")[present_edges]
     
 partition = community_louvain.best_partition(G, resolution = args.resolution, random_state=2)
 print('Number Partitions ' + str(list(set(partition.values()))))
@@ -50,21 +73,7 @@ for edge in G.edges:
 
 #%%
 
-#Reduce topic index/columns to those present in the network 
-present_topics = list(G.nodes)
-present_edges = list(e[0]+', '+e[1] for e in G.edges)
 
-df_topickeywords = pd.read_csv(os.path.join(data_folder, 'topic_keywords.csv'), index_col=0).loc[present_topics]
-df_topic_year = pd.read_csv(os.path.join(data_folder, 'topic_year.csv'), index_col=0)[present_topics]
-
-df_topic_year = df_topic_year.loc[:2020]
-top_papers_topic = pd.read_csv(os.path.join(data_folder, 'top_papers_topic.csv'), index_col=0).squeeze("columns")[present_topics]
-top_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'top_papers_6_10.csv'), index_col=0).squeeze("columns")[present_topics]
-
-#Reduce edges to those present in graph
-df_edgekeywords = pd.read_csv(os.path.join(data_folder, 'edge_keywords.csv'), index_col=0).loc[present_edges]
-top_papers_edge = pd.read_csv(os.path.join(data_folder, 'top_papers_edge.csv'), index_col=0).squeeze("columns")[present_edges]
-edge_papers_6_10 = pd.read_csv(os.path.join(data_folder, 'edge_papers_6_10.csv'), index_col=0).squeeze("columns")[present_edges]
 
 #calculate the probability over the past 5 years of dataset
 last_5_years = df_topic_year.index[-5:]
