@@ -11,11 +11,16 @@ readarray -t my_array < <(jq -c '.[]' all_site_info.json)
 for item in "${my_array[@]:0:10}"; do
   regex=$(jq '.regex' <<< "$item")
   regex=$(echo $regex | xargs echo)
+  echo "starting pipeline for $regex"
 
-  long_name=$(echo $long_name | xargs echo)
   long_name=$(jq '.long_name' <<< "$item")
+  long_name=$(echo $long_name | xargs echo)
 
-  #Data pipeline starts here
+  n_topics=$(jq '.n_topics' <<< "$item")
+  n_topics=$(echo $n_topics | xargs echo)
+
+
+  # #Data pipeline starts here
   cd "$REPO_PATH/text_data/semantic"
   python gen_search_index_database.py -r "$regex" #-sl 1e6
 
@@ -23,8 +28,7 @@ for item in "${my_array[@]:0:10}"; do
   python indexed_search_analysis.py -r "$regex"
 
   cd "$REPO_PATH/modeling/corex"
-  python genmodel_soc.py -r "$regex" -tw -n 50
-
+  python genmodel_soc.py -r "$regex" -tw -n $n_topics
 
   cd "$REPO_PATH/visualization/topic_trends"
   python topic_trends_script.py

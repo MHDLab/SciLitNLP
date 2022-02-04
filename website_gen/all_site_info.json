@@ -1,10 +1,12 @@
 [
-  {"regex":"energy storage","long_name":"Energy Storage"},
-  {"regex":"carbon nano","long_name":"Carbon Nano(tube)"},
-  {"regex":"magnetohydrodynamic","long_name":"Magnetohydrodynamic"},
-  {"regex":"natural language processing","long_name":"Natural Language Processing"},
-  {"regex":"oxygen (evolution|reduction)","long_name":"Oxygen Evolution or Reduction"},
-  {"regex":"(transfer|sequential) learning","long_name":"Transfer or Sequntial learning"},
-  {"regex":"satellite imag","long_name":"Satellite Imag(ing)"},
-  {"regex":"sustainable ag","long_name":"Sustainable Ag(riculture)"}
+  {"regex":"energy storage","long_name":"Energy Storage", "n_topics":50},
+  {"regex":"carbon nano","long_name":"Carbon Nano(tube)", "n_topics":50},
+  {"regex":"magnetohydrodynamic","long_name":"Magnetohydrodynamic", "n_topics":50},
+  {"regex":"natural language processing","long_name":"Natural Language Processing", "n_topics":50},
+  {"regex":"oxygen (evolution|reduction)","long_name":"Oxygen Evolution or Reduction", "n_topics":50},
+  {"regex":"(transfer|sequential) learning","long_name":"Transfer or Sequntial learning", "n_topics":50},
+  {"regex":"satellite imag","long_name":"Satellite Imag(ing)", "n_topics":50},
+  {"regex":"sustainable ag","long_name":"Sustainable Ag(riculture)", "n_topics": 30},
+  {"regex":"(redox flow|flow batter)","long_name":"Redox Flow Batter(y)", "n_topics": 30},
+  {"regex":"(thermal|thermomechanical) energy storage","long_name":"Therm Energy Storage", "n_topics":30}
 ]
