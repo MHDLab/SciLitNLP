@@ -1,6 +1,6 @@
 # SciLitNLP 
 
-Codes for natural language processing of scientific literature. To see some demos of the results see [here](https://mhdlab.github.io/nlp_reports/).
+Codes for natural language processing of scientific literature. You can see some demos of the results [here](https://mhdlab.github.io/nlp_reports/).
 
 # Overview
 
