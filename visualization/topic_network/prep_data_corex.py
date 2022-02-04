@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-d', '--dataset', type=str, choices = ['seams', 'soc'], help="Which type of dataset to use (previously generated)")
+parser.add_argument('-d', '--dataset', type=str, choices = ['seams', 'soc'], default='soc', help="Which type of dataset to use (previously generated)")
 parser.add_argument('--min-edge-weight', type=float, default=0, help="minimum edge weight to be included in output graph")
 args = parser.parse_args()
 
