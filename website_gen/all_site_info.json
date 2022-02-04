@@ -1,0 +1,10 @@
+[
+  {"regex":"energy storage","long_name":"Energy Storage"},
+  {"regex":"carbon nano","long_name":"Carbon Nano(tube)"},
+  {"regex":"magnetohydrodynamic","long_name":"Magnetohydrodynamic"},
+  {"regex":"natural language processing","long_name":"Natural Language Processing"},
+  {"regex":"oxygen (evolution|reduction)","long_name":"Oxygen Evolution or Reduction"},
+  {"regex":"(transfer|sequential) learning","long_name":"Transfer or Sequntial learning"},
+  {"regex":"satellite imag","long_name":"Satellite Imag(ing)"},
+  {"regex":"sustainable ag","long_name":"Sustainable Ag(riculture)"}
+]
