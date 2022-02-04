@@ -20,7 +20,7 @@ title: {{ long_name }}
 
 <section class="proj">
 <p>
-This page is a programatically generated report of the results of topic modeling algorithms on a collection of scientific literature. Expand the sections below for more information. The code can be found on <a href=https://github.com/MHDLab/SciLitNLP>GitHub</a>
+This page is a programatically generated report of the results of topic modeling algorithms on a collection of scientific literature. Expand the sections below for more information. The code can be found on <a href=https://github.com/MHDLab/SciLitNLP>GitHub</a>. You can find other topic modeling reports <a href=https://mhdlab.github.io/nlp_reports>here</a>.
 </p>
 
 <button type="button" class="collapsible"> <u>Dataset:</u> <b>{{ n_papers }}</b> papers that were found in the Semantic Scholar Open Research Corpus containing the regular expression <b>'{{ regex }}'</b> in the abstract or title</button>
@@ -28,7 +28,7 @@ This page is a programatically generated report of the results of topic modeling
         <p>
             The dataset used in this work is the <a href=https://api.semanticscholar.org/corpus>Semantic Scholar Open Research Corpus</a>.
             The full dataset includes the paper metadata (title, abstract, citation info, etc. ) for over 25 million papers stored locally in a ~100 Gb sqlite database. Topic modeling is performed on a subset of this data that is obtained by finding papers that contain the regular expression <b>'{{ regex }}'</b> in the title or abstract.
-            <!-- The dataset includes topic tags created by the now-defunct Microsoft Academic, and for the moment the dataset is first downselected to not include papers solely categorized as 'Medicine' (as they make up a large fraction of all research papers) -->
+            
         </p>
 
         <center>
@@ -38,6 +38,19 @@ This page is a programatically generated report of the results of topic modeling
             <figcaption style="text-align: center;font-style: italic;">Left: The number of all annual publications in the left) full Semantic Scholar Open Research Corpus database and right) The percentage of papers containing regular expression <b>'{{ regex }}'</b> in the title or abstract.</figcaption>
           </figure>
         </center>
+        <p>
+
+            Note: the 25 million papers mentioned above is a temporarily downselected version of the entire semantic scholar dataset. The dataset includes topic tags created by the now-defunct Microsoft Academic(MA), for the moment, for the inital phase of development we have reduced the database size by downselecting to papers containing the following MA topics:
+        'Chemistry',
+        'Computer Science',
+        'Engineering',
+        'Physics',
+        'Materials Science',
+        'Mathematics',
+        'Economics',
+        'Geology',
+        'Environmental Science'. For more information see <a href=https://github.com/allenai/s2orc>here</a>.
+        </p>
     </div>
 
 <button type="button" class="collapsible"> <u>Topic Modeling:</u> a <b>{{ model_type }}</b> topic model created with <b>{{ n_topics }}</b> topics </button>
@@ -50,7 +63,7 @@ This page is a programatically generated report of the results of topic modeling
 
         <center>
           <figure>
-            <img src="img/topic_modeling_schematic.png" width = 500 caption='test'></img>
+            <img src="img/topic_modeling_schematic.png" width = 500></img>
             <figcaption style="text-align: center;font-style: italic;">A schematic of a general topic modeling agorithm where each word and document has some probability of being associated with a topic. One caveat is that for CorEx topic models, each word only belongs to one topic. </figcaption>
           </figure>
         </center>
@@ -83,18 +96,18 @@ This page is a programatically generated report of the results of topic modeling
       <div class="extended">
         <p>
         Each node represents a topic and each edge between two topics represents the likelihood of the two topics appearing in an abstract together.
-        The graph projection is designed to make it easier to see connections between nodes.  The axes do not communicate additional information
+        The layout and scale of the axes is determined by the <a href=https://networkx.org/documentation/stable/reference/generated/networkx.drawing.layout.spring_layout.html>networkx spring_layout algorithm</a>. The algorithm tries to keep the <b>n</b> nodes <b>1/sqrt(n)</b> distance apart, which ends up determing the scale of the axes. This is not particularly informative so the axis tick marks are omitted.  
         <br>
         <br>
-        <b>NODE COLOR:</b> community assigned by the Louvain community detection algorithm.<br>
-        <b>NODE SIZE:</b> overall probability of the topic appearing in abstracts.<br>
-        <b>NODE OPACITY:</b> probability of the topic appearing in abstracts over the past 5 years (brighter = higher probability).<br>
-        <b>EDGE THICKNESS:</b> probability of two topics occurring in the same abstract.<br>
+        <b>NODE COLOR:</b> community assigned by the <a href=https://python-louvain.readthedocs.io/en/latest>Louvain community detection algorithm</a>.<br>
+        <b>NODE SIZE:</b> overall probability of the topic appearing in the analyzed collection of texts as a whole.<br>
+        <b>NODE OPACITY:</b> probability of the topic appearing in the analyzed collection of texts over the past 5 years (opacity = 0.5 + 0.5*recent_probability).<br>
+        <b>EDGE THICKNESS:</b> logarithmically scaled values of the <a href=https://aclanthology.org/W14-3112.pdf>topic covariance matrix</a>, related to how often those two topics show up together in a given paper<br>
         </p>
         <ul>
-          <li>Click on a topic to view information including the probability of abstracts containing topics over time and papers with the highest probability of containing the selected topic.</li>
+          <li>Click on a topic to view information about that topic including the papers with the highest probability of containing the selected topic (will appear to the right), and the topic probability trend (lower right) .</li>
           <li>Click in the blank area to reset the selection to nothing</li>
-          <li>With one topic selected, select another connected node to view the papers and words with the highest probabilities in both topics. Note that the words in CorEx topic models belong to only one topic, so there is no implemented method of finding the words associated with both topics. </li>
+          <li>With one topic selected, select another connected node (pink lines) to view the papers and words with the highest probabilities in both topics. In this case the 'topic_prob' is the probability of the two topics for that paper multiplied. Note that the words in CorEx topic models belong to only one topic, so there is no implemented method of finding the words associated with both topics. </li>
         </ul>
         </p>
       </div>
