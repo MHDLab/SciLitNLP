@@ -57,11 +57,11 @@ model_dict['n_papers'] = len(df_tm)
 docs = df_tm['title'] + ' ' + df_tm['paperAbstract']
 
 #Topic modeling
-print("Corex Topic Modeling")
+n_hidden = args.n_topics
+print("Corex Topic Modeling with {} topics".format(n_hidden))
 
 corex_anchors = []
 fixed_bigrams = nu.corex_utils.anchors_to_fixed_bigrams(corex_anchors)
-n_hidden = args.n_topics
 
 topic_model = corex_pipeline(docs, stopwords, corex_anchors, fixed_bigrams, n_hidden)
 
