@@ -24,7 +24,8 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-r', '--resolution', type=float, default=1, help="Louvain community resolution")
-parser.add_argument('-sn', '--size-norm', type=float, default=1, help="Number to divide node size by (make smaller)")
+parser.add_argument('-s', '--node-size', type=float, default=0.7, help="factor to change output node size by")
+parser.add_argument('-e', '--edge-weight', type=float, default=10, help="factor to change output edge size by")
 parser.add_argument('--show', action='store_true', help="Show bokeh plot (refresh page if false)")
 args = parser.parse_args()
 
@@ -64,11 +65,23 @@ print('Number Partitions ' + str(list(set(partition.values()))))
 cmap = cm.get_cmap('Set1', max(partition.values())+1 )
 
 # square root scaling of edge size and weight to bring out smaller topics a bit.  
+mean_node_size = np.mean([G.nodes[node]['size'] for node in G.nodes])
+print("Mean node size before scaling: {}".format(mean_node_size))
 for node in G.nodes:
-    G.nodes[node]['size'] = np.sqrt(G.nodes[node]['size']/args.size_norm)*3
+    G.nodes[node]['size'] = G.nodes[node]['size']/mean_node_size #bring node scale to 1 (roughly the size of the plot in data units)
+    G.nodes[node]['size'] = np.sqrt(G.nodes[node]['size']) #Now that scale is roughly 1 bring out smaller nodes a bit. 
+    G.nodes[node]['size'] = G.nodes[node]['size']/len(G.nodes) #reduce node size to 1/ntopics
+    G.nodes[node]['size'] = G.nodes[node]['size']*args.node_size #reduce node size to 1/ntopics
+    G.nodes[node]['size'] = G.nodes[node]['size']*1000 # change to screen units by scaling by plot size TODO: intergrate with a global plot size variale
 
+
+
+mean_edge_weight = np.mean([G.nodes[node]['size'] for node in G.nodes])
+print("Mean edge weight before scaling: {}".format(mean_edge_weight))
 for edge in G.edges:
-    G.edges[edge]['weight'] = np.sqrt(G.edges[edge]['weight'])*1.5
+    G.edges[edge]['weight'] = (G.edges[edge]['weight']/mean_edge_weight)+1.1
+    G.edges[edge]['weight'] = np.log(G.edges[edge]['weight'])
+    G.edges[edge]['weight'] = G.edges[edge]['weight']*args.edge_weight
 
 
 #%%
@@ -458,7 +471,7 @@ group_year = df_topic_year.copy()
 #create a df of group year filled with zeros
 for g in groups:
     group_year[g] = group_year.iloc[:,-1] - group_year.iloc[:,-1]
-group_year.drop(group_year.columns.difference(groups), 1, inplace=True)
+group_year = group_year.drop(group_year.columns.difference(groups), axis=1)
 
 #a function for getting the list of nodes in that group as well as their size and keywords in order of importance
 def get_nodes(v, dict, GL):
