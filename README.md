@@ -1,4 +1,6 @@
-Codes for natural language processing of scientific literature
+# SciLitNLP 
+
+Codes for natural language processing of scientific literature. To see some demos of the results see [here](https://mhdlab.github.io/nlp_reports/).
 
 # Overview
 
@@ -18,6 +20,7 @@ The main folder are the main steps in the data flow
 - visualization: of generated models 
     * Codes and notebooks to generate plots
     * Codes to generate bokeh-based web visualization html files (static)
+- website_gen: code to run and consolidate the above pipeline into a report-style website. 
 
 This repo was formed by putting together different NLP projects/repos formed over the last couple years. The main pipeline described below is under development but should be working, but there are many other scripts and notebooks in the code that still need to be updated with correct paths etc. to work.  
 
@@ -33,9 +36,9 @@ then enter the repository with
 
 There are `environment.yml` files with the conda environment that I've used to run the code. Setup the conda environment with
 
-`conda env create -f environment_nobuild.yml`
+`conda env create -f environment_(OS).yml`
 
-Note that this environment was mainly setup with the `conda-forge` channel so you will want to specify `-c conda-forge` when installing furhter packages with conda. 
+Where OS is the operating system. Note that this environment was mainly setup with the `conda-forge` channel so you will want to specify `-c conda-forge` when installing furhter packages with conda. 
 
 once the environment is installed activate it with 
 
@@ -66,6 +69,8 @@ DB_FOLDER = 'path/to/databases/folder'
 # Running the code
 
 At the moment, **The python scripts in this repo are designed to be run within their respective folders** as they will output files (into gitignored folders) that are used in other scripts.  I use multiple command prompts open for different segments of the data flow pipeline, each open in their respective script's folder. Command line arguments are being added and are not stable but you can find how to run each script with the `-h` flag.
+
+The file `website_gen\run_all.sh` is a shell script that will run through all of the data pipeline to produce a corex topic modeling report like the ones found [here](https://mhdlab.github.io/nlp_reports/). You can look in there to see the basic script pipeline. Note You can run this script on windows with [git bash](https://gitforwindows.org/) and following the commented websites in the script (specificlly '`jq` neeeds to be installed to parse `all_site_info.json`). 
 
 ## Setting up a text database
 In general the codes are designed to run on data contained within sqlite databse files (extension `.db`). The `text_data` folder contains codes for generating these database files which it looks for in `DB_FOLDER` defined in the `.env` file.  The module `nlp_utils.fileio` has `load_df` functions to read these databases and output a pandas dataframe to a common format expected by the python codes. 
